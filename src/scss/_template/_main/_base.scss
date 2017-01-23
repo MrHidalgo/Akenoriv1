@@ -1,0 +1,70 @@
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+@import "../../_variable/sprite_AKENORI1";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white			      : return-value(color, white);
+$c-matterhorn       : return-value(color, matterhorn);
+$c-dodger-blue      : return-value(color, dodger-blue);
+
+$f-PN_bold          : return-value(fonts, PN_bold);
+
+/* BTN */
+.btn {
+	@include mixinDimensions(300px, 56px);
+	line-height: 56px;
+
+	font: {
+		size: 25px;
+		family: $f-PN_bold;
+	}
+	text-transform: uppercase;
+	text-align: center;
+
+
+	&-buy {
+		position: relative;
+		display: block;
+
+		padding-left: 30px;
+
+		text-align: left;
+
+
+		&:after {
+			content: "";
+
+			position: absolute;
+			top: 18px;
+			right: 30px;
+
+			@include retina-sprite($sp-i-btn-arrow-group);
+		}
+	}
+
+
+	&_white {
+		transition: all .3s ease-in-out;
+
+		background-color: $c-white;
+
+		color: $c-matterhorn;
+
+
+		&:hover {
+			transition: all .3s ease-in-out;
+
+			background-color: $c-dodger-blue;
+
+			color: $c-white;
+
+
+			&:after {
+				@include retina-sprite($sp-i-btn-arr-h-group);
+			}
+		}
+	}
+}

@@ -1,0 +1,71 @@
+.internal-container,
+.container,
+.container-fluid {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+}
+
+.internal-container {
+	max-width: 940px \9;
+}
+
+.container {
+	max-width: 1200px;
+	min-width: 300px;
+	padding: 0 15px;
+}
+
+.container-fluid {
+	max-width: 1600px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+
+// Extra small devices (portrait phones, less than 544px)
+@media (max-width: 479px) {
+	//.container {
+	//	padding-left: 0;
+	//	padding-right: 0;
+	//}
+}
+
+// Small devices
+@media (max-width: 767px) {
+	.container {
+		min-width: 300px;
+		max-width: 450px;
+	}
+}
+
+// Medium devices
+@media (min-width: 768px) and (max-width: 991px) {
+	.container {
+		max-width:  720px;
+	}
+}
+@media (max-width: 991px) {
+	.internal-container {
+		width: auto;
+	}
+}
+
+// Large devices
+@media (min-width: 992px) and (max-width: 1199px) {
+	.container {
+		max-width: 940px;
+	}
+}
+
+// Extra large devices
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1200px;
+	}
+
+	.internal-container {
+		max-width: 940px;
+	}
+}

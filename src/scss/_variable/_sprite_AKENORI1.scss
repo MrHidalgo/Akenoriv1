@@ -1,0 +1,250 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$sp-i-btn-arr-h-name: 'sp-i-btn-arr-h';
+$sp-i-btn-arr-h-x: 0px;
+$sp-i-btn-arr-h-y: 0px;
+$sp-i-btn-arr-h-offset-x: 0px;
+$sp-i-btn-arr-h-offset-y: 0px;
+$sp-i-btn-arr-h-width: 13px;
+$sp-i-btn-arr-h-height: 20px;
+$sp-i-btn-arr-h-total-width: 31px;
+$sp-i-btn-arr-h-total-height: 127px;
+$sp-i-btn-arr-h-image: '../img/sprite_AKENORI1.png';
+$sp-i-btn-arr-h: (0px, 0px, 0px, 0px, 13px, 20px, 31px, 127px, '../img/sprite_AKENORI1.png', 'sp-i-btn-arr-h', );
+$sp-i-btn-arrow-name: 'sp-i-btn-arrow';
+$sp-i-btn-arrow-x: 0px;
+$sp-i-btn-arrow-y: 25px;
+$sp-i-btn-arrow-offset-x: 0px;
+$sp-i-btn-arrow-offset-y: -25px;
+$sp-i-btn-arrow-width: 13px;
+$sp-i-btn-arrow-height: 20px;
+$sp-i-btn-arrow-total-width: 31px;
+$sp-i-btn-arrow-total-height: 127px;
+$sp-i-btn-arrow-image: '../img/sprite_AKENORI1.png';
+$sp-i-btn-arrow: (0px, 25px, 0px, -25px, 13px, 20px, 31px, 127px, '../img/sprite_AKENORI1.png', 'sp-i-btn-arrow', );
+$sp-i-fb-name: 'sp-i-fb';
+$sp-i-fb-x: 0px;
+$sp-i-fb-y: 50px;
+$sp-i-fb-offset-x: 0px;
+$sp-i-fb-offset-y: -50px;
+$sp-i-fb-width: 8px;
+$sp-i-fb-height: 18px;
+$sp-i-fb-total-width: 31px;
+$sp-i-fb-total-height: 127px;
+$sp-i-fb-image: '../img/sprite_AKENORI1.png';
+$sp-i-fb: (0px, 50px, 0px, -50px, 8px, 18px, 31px, 127px, '../img/sprite_AKENORI1.png', 'sp-i-fb', );
+$sp-i-header-arr-name: 'sp-i-header-arr';
+$sp-i-header-arr-x: 0px;
+$sp-i-header-arr-y: 73px;
+$sp-i-header-arr-offset-x: 0px;
+$sp-i-header-arr-offset-y: -73px;
+$sp-i-header-arr-width: 31px;
+$sp-i-header-arr-height: 36px;
+$sp-i-header-arr-total-width: 31px;
+$sp-i-header-arr-total-height: 127px;
+$sp-i-header-arr-image: '../img/sprite_AKENORI1.png';
+$sp-i-header-arr: (0px, 73px, 0px, -73px, 31px, 36px, 31px, 127px, '../img/sprite_AKENORI1.png', 'sp-i-header-arr', );
+$sp-i-vk-name: 'sp-i-vk';
+$sp-i-vk-x: 0px;
+$sp-i-vk-y: 114px;
+$sp-i-vk-offset-x: 0px;
+$sp-i-vk-offset-y: -114px;
+$sp-i-vk-width: 22px;
+$sp-i-vk-height: 13px;
+$sp-i-vk-total-width: 31px;
+$sp-i-vk-total-height: 127px;
+$sp-i-vk-image: '../img/sprite_AKENORI1.png';
+$sp-i-vk: (0px, 114px, 0px, -114px, 22px, 13px, 31px, 127px, '../img/sprite_AKENORI1.png', 'sp-i-vk', );
+$sp-i-btn-arr-h-2x-name: 'sp-i-btn-arr-h@2x';
+$sp-i-btn-arr-h-2x-x: 0px;
+$sp-i-btn-arr-h-2x-y: 0px;
+$sp-i-btn-arr-h-2x-offset-x: 0px;
+$sp-i-btn-arr-h-2x-offset-y: 0px;
+$sp-i-btn-arr-h-2x-width: 26px;
+$sp-i-btn-arr-h-2x-height: 40px;
+$sp-i-btn-arr-h-2x-total-width: 62px;
+$sp-i-btn-arr-h-2x-total-height: 254px;
+$sp-i-btn-arr-h-2x-image: '../img/sprite_AKENORI1@2x.png';
+$sp-i-btn-arr-h-2x: (0px, 0px, 0px, 0px, 26px, 40px, 62px, 254px, '../img/sprite_AKENORI1@2x.png', 'sp-i-btn-arr-h@2x', );
+$sp-i-btn-arrow-2x-name: 'sp-i-btn-arrow@2x';
+$sp-i-btn-arrow-2x-x: 0px;
+$sp-i-btn-arrow-2x-y: 50px;
+$sp-i-btn-arrow-2x-offset-x: 0px;
+$sp-i-btn-arrow-2x-offset-y: -50px;
+$sp-i-btn-arrow-2x-width: 26px;
+$sp-i-btn-arrow-2x-height: 40px;
+$sp-i-btn-arrow-2x-total-width: 62px;
+$sp-i-btn-arrow-2x-total-height: 254px;
+$sp-i-btn-arrow-2x-image: '../img/sprite_AKENORI1@2x.png';
+$sp-i-btn-arrow-2x: (0px, 50px, 0px, -50px, 26px, 40px, 62px, 254px, '../img/sprite_AKENORI1@2x.png', 'sp-i-btn-arrow@2x', );
+$sp-i-fb-2x-name: 'sp-i-fb@2x';
+$sp-i-fb-2x-x: 0px;
+$sp-i-fb-2x-y: 100px;
+$sp-i-fb-2x-offset-x: 0px;
+$sp-i-fb-2x-offset-y: -100px;
+$sp-i-fb-2x-width: 16px;
+$sp-i-fb-2x-height: 36px;
+$sp-i-fb-2x-total-width: 62px;
+$sp-i-fb-2x-total-height: 254px;
+$sp-i-fb-2x-image: '../img/sprite_AKENORI1@2x.png';
+$sp-i-fb-2x: (0px, 100px, 0px, -100px, 16px, 36px, 62px, 254px, '../img/sprite_AKENORI1@2x.png', 'sp-i-fb@2x', );
+$sp-i-header-arr-2x-name: 'sp-i-header-arr@2x';
+$sp-i-header-arr-2x-x: 0px;
+$sp-i-header-arr-2x-y: 146px;
+$sp-i-header-arr-2x-offset-x: 0px;
+$sp-i-header-arr-2x-offset-y: -146px;
+$sp-i-header-arr-2x-width: 62px;
+$sp-i-header-arr-2x-height: 72px;
+$sp-i-header-arr-2x-total-width: 62px;
+$sp-i-header-arr-2x-total-height: 254px;
+$sp-i-header-arr-2x-image: '../img/sprite_AKENORI1@2x.png';
+$sp-i-header-arr-2x: (0px, 146px, 0px, -146px, 62px, 72px, 62px, 254px, '../img/sprite_AKENORI1@2x.png', 'sp-i-header-arr@2x', );
+$sp-i-vk-2x-name: 'sp-i-vk@2x';
+$sp-i-vk-2x-x: 0px;
+$sp-i-vk-2x-y: 228px;
+$sp-i-vk-2x-offset-x: 0px;
+$sp-i-vk-2x-offset-y: -228px;
+$sp-i-vk-2x-width: 44px;
+$sp-i-vk-2x-height: 26px;
+$sp-i-vk-2x-total-width: 62px;
+$sp-i-vk-2x-total-height: 254px;
+$sp-i-vk-2x-image: '../img/sprite_AKENORI1@2x.png';
+$sp-i-vk-2x: (0px, 228px, 0px, -228px, 44px, 26px, 62px, 254px, '../img/sprite_AKENORI1@2x.png', 'sp-i-vk@2x', );
+$spritesheet-width: 31px;
+$spritesheet-height: 127px;
+$spritesheet-image: '../img/sprite_AKENORI1.png';
+$spritesheet-sprites: ($sp-i-btn-arr-h, $sp-i-btn-arrow, $sp-i-fb, $sp-i-header-arr, $sp-i-vk, );
+$spritesheet: (31px, 127px, '../img/sprite_AKENORI1.png', $spritesheet-sprites, );
+$retina-spritesheet-width: 62px;
+$retina-spritesheet-height: 254px;
+$retina-spritesheet-image: '../img/sprite_AKENORI1@2x.png';
+$retina-spritesheet-sprites: ($sp-i-btn-arr-h-2x, $sp-i-btn-arrow-2x, $sp-i-fb-2x, $sp-i-header-arr-2x, $sp-i-vk-2x, );
+$retina-spritesheet: (62px, 254px, '../img/sprite_AKENORI1@2x.png', $retina-spritesheet-sprites, );
+
+// These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+//
+// The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+$sp-i-btn-arr-h-group-name: 'sp-i-btn-arr-h';
+$sp-i-btn-arr-h-group: ('sp-i-btn-arr-h', $sp-i-btn-arr-h, $sp-i-btn-arr-h-2x, );
+$sp-i-btn-arrow-group-name: 'sp-i-btn-arrow';
+$sp-i-btn-arrow-group: ('sp-i-btn-arrow', $sp-i-btn-arrow, $sp-i-btn-arrow-2x, );
+$sp-i-fb-group-name: 'sp-i-fb';
+$sp-i-fb-group: ('sp-i-fb', $sp-i-fb, $sp-i-fb-2x, );
+$sp-i-header-arr-group-name: 'sp-i-header-arr';
+$sp-i-header-arr-group: ('sp-i-header-arr', $sp-i-header-arr, $sp-i-header-arr-2x, );
+$sp-i-vk-group-name: 'sp-i-vk';
+$sp-i-vk-group: ('sp-i-vk', $sp-i-vk, $sp-i-vk-2x, );
+$retina-groups: ($sp-i-btn-arr-h-group, $sp-i-btn-arrow-group, $sp-i-fb-group, $sp-i-header-arr-group, $sp-i-vk-group, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+//   It should be used with a "retina group" variable.
+//
+// The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+//
+// $icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+//
+// .icon-home {
+//   @include retina-sprite($icon-home-group);
+// }
+@mixin sprite-background-size($sprite) {
+  $sprite-total-width: nth($sprite, 7);
+  $sprite-total-height: nth($sprite, 8);
+  background-size: $sprite-total-width $sprite-total-height;
+}
+
+@mixin retina-sprite($retina-group) {
+  $normal-sprite: nth($retina-group, 2);
+  $retina-sprite: nth($retina-group, 3);
+  @include sprite($normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    @include sprite-image($retina-sprite);
+    @include sprite-background-size($normal-sprite);
+  }
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+// The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+//   This yields the same output as CSS retina template but can be overridden in SCSS
+//
+// @include retina-sprites($retina-groups);
+@mixin retina-sprites($retina-groups) {
+  @each $retina-group in $retina-groups {
+    $sprite-name: nth($retina-group, 1);
+    .#{$sprite-name} {
+      @include retina-sprite($retina-group);
+    }
+  }
+}

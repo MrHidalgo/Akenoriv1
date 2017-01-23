@@ -1,0 +1,48 @@
+include ../_mixin/mixin
+
+-
+    var headerTitle = "Первый видеорегистратор,</br><span class='header__title_bold'>созданный специально</span></br>для внедорожников и кроссоверов";
+
+header.header
+
+    img(
+        src="./img/img-header-register.png"
+        title=""
+        alt=""
+        class="header__img img_responsive"
+    )
+
+    include macros/header__fixed
+
+
+    .container-fluid.clearfix
+        .header__right
+
+            .header__row
+                img(
+                    src="./img/img-logotype-0.png"
+                    title="logotype small"
+                    alt="logotype small"
+                    class="header__logotype header__logotype-0"
+                )
+                img(
+                    src="./img/img-logotype-1.png"
+                    title="logotype small"
+                    alt="logotype small"
+                    class="header__logotype header__logotype-1"
+                )
+
+                h1.header__title!= headerTitle
+
+                a(
+                    href="javascript:void(0);"
+                    title="btn buy"
+                    class="btn btn-buy btn_white"
+                )!= "Купить"
+
+
+    a(
+        href="javascript:void(0);"
+        title=""
+        class="btn-arrow"
+    )

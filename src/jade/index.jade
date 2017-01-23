@@ -1,0 +1,16 @@
+include _mixin/mixin
+
+
+doctype html
+html(lang="en")
+
+    +headSite("Akenori_v2", linkSite.styleLink, "")
+
+
+    body
+
+        include _template/header
+
+
+        - for(var i = 0; i < linkSite.scriptLink.length; i++)
+            script(src= linkSite.scriptLink[i])

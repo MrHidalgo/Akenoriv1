@@ -1,0 +1,104 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../_variable/sprite_AKENORI1";
+
+@import "./_macros/header__fixed";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white			      : return-value(color, white);
+$c-black			      : return-value(color, black);
+
+$f-PN_thin          : return-value(fonts, PN_thin);
+$f-PN_extraBold     : return-value(fonts, PN_extraBold);
+///
+/// MAIN
+///
+.header {
+	position: relative;
+
+	height: 100vh;
+
+	background-color: $c-black;
+
+	overflow: hidden;
+
+
+	&__img {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+	}
+
+
+	&__right {
+		float: right;
+		position: relative;
+		z-index: 10;
+		@include mixinDimensions($w-all/2, $w-all);
+
+
+		&:before {
+			content: "";
+
+			display: inline-block;
+			height: $w-all;
+
+			margin-right: -.2em;
+
+			vertical-align: middle;
+		}
+	}
+
+
+	&__row {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+
+	&__logotype {
+		display: block;
+
+
+		&-0 {
+			margin-bottom: 20px;
+		}
+		&-1 {
+			margin-bottom: 40px;
+		}
+	}
+
+
+	&__title {
+		font: {
+			size: 40px;
+			family: $f-PN_thin;
+		}
+		color: $c-white;
+		text-transform: uppercase;
+
+		margin-bottom: 60px;
+
+
+		&_bold{
+			font-family: $f-PN_extraBold;
+		}
+	}
+}
+
+
+.btn-arrow {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 55px;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	@include retina-sprite($sp-i-header-arr-group);
+}

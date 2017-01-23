@@ -1,0 +1,9 @@
+/// MAIN TMPL
+@import "_template/header";
+
+/// MACROS TMPL
+@import "_template/_main/_macros/btn-social";
+
+@import "_template/_main/_grid";
+@import "_template/_main/_base";
+@import "_template/_main/_main";

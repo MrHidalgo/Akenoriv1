@@ -1,0 +1,18 @@
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white			      : return-value(color, white);
+///
+/// MAIN
+///
+.logotype {
+	display: inline-block;
+
+	height: 21px;
+
+	margin-top: 32px;
+}

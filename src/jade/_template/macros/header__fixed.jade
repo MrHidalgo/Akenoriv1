@@ -1,0 +1,21 @@
+-
+    var socialArr = [
+        "vk",
+        "fb"
+    ];
+
+
+section.header__fixed.clearfix
+    .container-fluid
+
+        +btnMenuBurger()
+
+        .logotype
+            img(
+                src="./img/img-logotype.png"
+                title="logotype"
+                alt="logotype"
+                class="logotype__img"
+            )
+
+        +socialBtn(socialArr, " header__fixed-social")

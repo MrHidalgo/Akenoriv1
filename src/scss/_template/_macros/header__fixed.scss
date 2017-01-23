@@ -1,0 +1,31 @@
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+@import "../_main/_macros/btn-burger";
+@import "../_macros/logotype";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white			      : return-value(color, white);
+///
+/// MAIN
+///
+.header__fixed {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 11;
+
+	@include mixinDimensions($w-all, 85px);
+
+	text-align: center;
+
+
+	&-social {
+		float: right;
+
+		margin-top: 30.5px;
+	}
+}
