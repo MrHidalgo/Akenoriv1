@@ -1,0 +1,34 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../_variable/sprite_AKENORI1";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white	        : return-value(color, white);
+///
+/// MAIN
+///
+.difference {
+	position: relative;
+
+	padding-top: 160px;
+	padding-bottom: 160px;
+
+	overflow: hidden;
+
+
+	&__eclips {
+		top: -140px;
+
+		@include mixinDimensions(870px);
+	}
+
+
+	&__list {
+		.main__item {
+			width: (100 / 3) * 1%;
+		}
+	}
+}

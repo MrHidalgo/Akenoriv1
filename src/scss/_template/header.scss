@@ -47,7 +47,7 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 			display: inline-block;
 			height: $w-all;
 
-			margin-right: -.2em;
+			margin-right: -.32em;
 
 			vertical-align: middle;
 		}
@@ -93,6 +93,7 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 
 .btn-arrow {
 	position: absolute;
+	z-index: 11;
 	left: 0;
 	right: 0;
 	bottom: 55px;

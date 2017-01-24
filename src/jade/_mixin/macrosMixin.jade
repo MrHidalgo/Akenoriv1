@@ -1,0 +1,15 @@
+//- MAIN TITLE
+mixin mainTitle(className, text)
+    p(class="main__title" + className)!= text
+
+//- MAIN LIST
+mixin mainList(className, textArr)
+    ul(class="main__list" + className)
+        -for(var i = 0, j = 1; i < textArr.length; i++, j++)
+            li.main__item
+                .main__item-wrap
+                    .main__item-header
+                        i.main__item-icon
+                        span.main__item-number!= "0" + j
+                    .main__item-footer
+                        p.main__title-text!= textArr[i]

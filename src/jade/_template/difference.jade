@@ -1,0 +1,31 @@
+include ../_mixin/macrosMixin
+
+-
+    var diffTitle = "Этот девайс <span class='main__title_bold'>отличается от всех</span></br>видеорегистраторов что вы видели раньше";
+    var diffText = [
+        "",
+        "",
+        ""
+    ];
+
+section.difference
+
+    +mainTitle("", diffTitle)
+
+    .difference__eclips.block__ellipse
+        img(
+            src="./img/img-diff-text.png"
+            alt="nx1"
+            title="nx1"
+            class="img_responsive block__ellipse-img"
+        )
+
+    //img(
+    //    src="./img/img-diff-register.png"
+    //    alt="Akenori device"
+    //    title="Akenori device"
+    //    class="img_responsive "
+    //)
+
+    .container
+        +mainList(" difference__list", diffText)

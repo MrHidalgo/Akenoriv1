@@ -6,12 +6,13 @@
 ///
 $w-all              : return-value(dimension, all);
 
-$c-white			      : return-value(color, white);
+$c-white			: return-value(color, white);
 $c-matterhorn       : return-value(color, matterhorn);
 $c-dodger-blue      : return-value(color, dodger-blue);
+$c-white-smoke      : return-value(color, white-smoke);
 
 $f-PN_bold          : return-value(fonts, PN_bold);
-
+$f-PN_thin          : return-value(fonts, PN_thin);
 /* BTN */
 .btn {
 	@include mixinDimensions(300px, 56px);
@@ -66,5 +67,85 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 				@include retina-sprite($sp-i-btn-arr-h-group);
 			}
 		}
+	}
+}
+
+
+/* MAIN TITLE */
+.main__title {
+	font: {
+		size: 40px;
+		family: $f-PN_thin;
+	}
+	text-align: center;
+	text-transform: uppercase;
+
+	padding-bottom: 60px;
+
+	position: relative;
+	z-index: 11;
+
+
+	&_bold {
+		font-family: $f-PN_bold;
+	}
+}
+
+
+/* BLOCK ELLIPSE */
+.block__ellipse {
+	position: absolute;
+	z-index: 0;
+	left: 0;
+	right: 0;
+
+	margin:{
+		left: auto;
+		right: auto;
+	}
+
+	border: {
+		radius: $w-all;
+		width: 1px;
+		style: dashed;
+		color: $c-white-smoke;
+	}
+
+
+	&-img {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		margin: auto;
+	}
+}
+
+
+/* MAIN LIST */
+.main {
+	&__list {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+
+
+	&__item {
+		flex: 1 300px;
+
+
+		&-wrap {
+			max-width: 270px;
+		}
+
+
+		&-header {}
+		&-footer {}
+		&-icon {}
+		&-number {}
+		&-text {}
 	}
 }
