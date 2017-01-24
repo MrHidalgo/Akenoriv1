@@ -1,0 +1,95 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../_variable/sprite_AKENORI1";
+///
+/// DECLARATION VARIABLE
+///
+$w-all            : return-value(dimension, all);
+
+$c-white	        : return-value(color, white);
+///
+/// MAIN
+///
+.special {
+	position: relative;
+
+	padding-top: 60px;
+
+
+	&__eclips {
+		top: 0;
+
+		@include mixinDimensions(473px);
+
+
+		&.block__ellipse {
+			z-index: 11;
+		}
+
+
+		&-internal {
+			bottom: -28px;
+
+			@include mixinDimensions(56px);
+
+			padding-top: 14px;
+
+			text-align: center;
+
+
+			&:before {
+				content: "";
+
+				display: inline-block;
+
+				@include retina-sprite($sp-i-special-device-group);
+			}
+		}
+	}
+
+
+	&__row {
+		position: relative;
+
+		height: 725px;
+
+
+		.row__left {
+			background-image: url("../img/img-special-left.png");
+		}
+
+
+		.row__right {
+			background-image: url("../img/img-special-right.png");
+		}
+
+
+		.row__left,
+		.row__right {
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+	}
+
+
+	&__img {
+		&-left {
+			right: 0;
+			bottom: 116px;
+		}
+
+
+		&-right {
+			left: 0;
+			bottom: 119px;
+		}
+
+
+		&-left,
+		&-right {
+			position: absolute;
+
+		}
+	}
+}

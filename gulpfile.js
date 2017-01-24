@@ -35,6 +35,7 @@ gulp.task(command.watch, function() {
     var srcWatchJADE = ['./src/jade/**.jade', './src/jade/**/**.jade'];
     var srcWatchJSON = ['./src/_data/*.json'];
     var srcWatchJS   = ['./src/js/**.js'];
+    var srcWatchPNG  = ['./src/icons/**.png'];
 
     watch(srcWatchSCSS, function() {
         gulp.start(command.buildScss)
@@ -47,6 +48,9 @@ gulp.task(command.watch, function() {
     });
     watch(srcWatchJSON, function() {
         gulp.start(command.buildJade)
+    });
+    watch(srcWatchPNG, function() {
+        gulp.start(command.sprites)
     });
 });
 

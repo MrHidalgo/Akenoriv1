@@ -1,24 +1,4 @@
 
-.difference {
-  position: relative;
-  padding-top: 160px;
-  padding-bottom: 160px;
-  overflow: hidden;
-}
-
-
-.difference__eclips {
-  top: -140px;
-  width: 870px;
-  height: 870px;
-}
-
-
-.difference__list .main__item {
-  width: 33.33333%;
-}
-
-
 .social__btn {
   margin-left: 15px;
 }
@@ -32,7 +12,7 @@
 .social__vk {
   display: inline-block;
   background-image: url(../img/sprite_AKENORI1.png);
-  background-position: 0px -114px;
+  background-position: 0px -610px;
   width: 22px;
   height: 13px;
 }
@@ -41,7 +21,7 @@
   
   .social__vk {
     background-image: url(../img/sprite_AKENORI1@2x.png);
-    background-size: 31px 127px;
+    background-size: 79px 623px;
   }
 }
 
@@ -49,7 +29,7 @@
 .social__fb {
   display: inline-block;
   background-image: url(../img/sprite_AKENORI1.png);
-  background-position: 0px -50px;
+  background-position: 0px -475px;
   width: 8px;
   height: 18px;
 }
@@ -58,7 +38,7 @@
   
   .social__fb {
     background-image: url(../img/sprite_AKENORI1@2x.png);
-    background-size: 31px 127px;
+    background-size: 79px 623px;
   }
 }
 
@@ -158,7 +138,7 @@
   top: 18px;
   right: 30px;
   background-image: url(../img/sprite_AKENORI1.png);
-  background-position: 0px -25px;
+  background-position: 0px -450px;
   width: 13px;
   height: 20px;
 }
@@ -167,40 +147,76 @@
   
   .btn-buy:after {
     background-image: url(../img/sprite_AKENORI1@2x.png);
-    background-size: 31px 127px;
+    background-size: 79px 623px;
   }
 }
 
 
-.btn_white {
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+.btn-more {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+.btn_white-arr {
   background-color: #fff;
   color: #4e4e4e;
 }
 
 
-.btn_white:hover {
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+.btn_white-arr:hover {
   background-color: #0b8aff;
   color: #fff;
 }
 
 
-.btn_white:hover:after {
+.btn_white-arr:hover:after {
   background-image: url(../img/sprite_AKENORI1.png);
-  background-position: 0px 0px;
+  background-position: 0px -425px;
   width: 13px;
   height: 20px;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   
-  .btn_white:hover:after {
+  .btn_white-arr:hover:after {
     background-image: url(../img/sprite_AKENORI1@2x.png);
-    background-size: 31px 127px;
+    background-size: 79px 623px;
   }
+}
+
+
+.btn_white {
+  background-color: #fff;
+  color: #0b8aff;
+}
+
+
+.btn_dark {
+  background-color: #272727;
+  color: #fff;
+}
+
+
+.btn_dark:hover {
+  background-color: #0b8aff;
+}
+
+
+.btn_white-arr, .btn_white, .btn_dark {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+
+.btn_white-arr:hover, .btn_white:hover, .btn_dark:hover {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 
@@ -211,8 +227,10 @@
   text-align: center;
   text-transform: uppercase;
   padding-bottom: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
   position: relative;
-  z-index: 11;
+  z-index: 15;
 }
 
 
@@ -230,9 +248,9 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 100%;
-  border-width: 1px;
-  border-style: dashed;
-  border-color: #f3f3f3;
+  border-width: 2px;
+  border-style: dotted;
+  border-color: #eaeaea;
 }
 
 
@@ -264,16 +282,65 @@
 }
 
 
-.main__item {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 300px;
-      -ms-flex: 1 300px;
-          flex: 1 300px;
+.main__item-wrap {
+  max-width: 270px;
+  margin-left: -webkit-calc(100% - 270px);
+  margin-left: calc(100% - 270px);
 }
 
 
-.main__item-wrap {
-  max-width: 270px;
+.main__item-header {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+
+.main__item-number {
+  position: absolute;
+  top: 0;
+  right: 60px;
+  font-size: 18px;
+  font-family: "Proxima Nova Bold";
+  color: #BEBEBE;
+}
+
+
+.main__item-text {
+  font-size: 20px;
+  color: #6c6c6c;
+}
+
+
+
+.row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.row__left {
+  left: 0;
+}
+
+
+.row__right {
+  right: 0;
+}
+
+
+.row__left, .row__right {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+
+.row__half {
+  width: 50%;
+  height: 100%;
 }
 
 
@@ -310,7 +377,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Proxima Nova Regular";
-  background-color: gray;
+  background-color: #fff;
   overflow-x: hidden;
 }
 

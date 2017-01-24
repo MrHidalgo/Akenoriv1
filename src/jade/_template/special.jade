@@ -1,0 +1,35 @@
+include ../_mixin/macrosMixin
+
+-
+    var specialTitle = "Создан <span class='main__title_bold'>специально для внедорожников.</span></br>AKENORI – лучший помощник в городе и на природе.";
+
+section.special
+    +mainTitle("", specialTitle)
+
+    .special__eclips.block__ellipse
+        .special__eclips-internal.block__ellipse
+
+
+    .special__row
+        .row
+            .row__left.row__half
+                img(
+                    src="./img/img-special-car-left.png"
+                    title="special car"
+                    alt="special car"
+                    class="img_responsive special__img-left"
+                )
+            .row__right.row__half
+                img(
+                    src="./img/img-special-car-right.png"
+                    title="special car"
+                    alt="special car"
+                    class="img_responsive special__img-right"
+                )
+
+        .container
+            a(
+                href="javascript:void(0);"
+                title="btn more"
+                class="btn btn-more btn_dark"
+            )!= "подробнее"

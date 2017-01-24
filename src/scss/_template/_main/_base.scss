@@ -6,10 +6,14 @@
 ///
 $w-all              : return-value(dimension, all);
 
-$c-white			: return-value(color, white);
+$c-white			      : return-value(color, white);
 $c-matterhorn       : return-value(color, matterhorn);
 $c-dodger-blue      : return-value(color, dodger-blue);
 $c-white-smoke      : return-value(color, white-smoke);
+$c-whisper          : return-value(color, whisper);
+$c-silver           : return-value(color, silver);
+$c-dim-gray         : return-value(color, dim-gray);
+$c-neroLight        : return-value(color, neroLight);
 
 $f-PN_bold          : return-value(fonts, PN_bold);
 $f-PN_thin          : return-value(fonts, PN_thin);
@@ -47,17 +51,28 @@ $f-PN_thin          : return-value(fonts, PN_thin);
 	}
 
 
-	&_white {
-		transition: all .3s ease-in-out;
+	&-more {
+		position: absolute;
+		bottom: 50px;
+		left: 0;
+		right: 0;
 
+		margin: {
+			left: auto;
+			right: auto;
+		};
+
+		text-align: center;
+	}
+
+
+	&_white-arr {
 		background-color: $c-white;
 
 		color: $c-matterhorn;
 
 
 		&:hover {
-			transition: all .3s ease-in-out;
-
 			background-color: $c-dodger-blue;
 
 			color: $c-white;
@@ -66,6 +81,37 @@ $f-PN_thin          : return-value(fonts, PN_thin);
 			&:after {
 				@include retina-sprite($sp-i-btn-arr-h-group);
 			}
+		}
+	}
+
+
+	&_white {
+		background-color: $c-white;
+
+		color: $c-dodger-blue;
+	}
+
+
+	&_dark {
+		background-color: $c-neroLight;
+
+		color: $c-white;
+
+
+		&:hover {
+			background-color: $c-dodger-blue;
+		}
+	}
+
+
+	&_white-arr,
+	&_white,
+	&_dark {
+		transition: all .3s ease-in-out;
+
+
+		&:hover {
+			transition: all .3s ease-in-out;
 		}
 	}
 }
@@ -81,9 +127,11 @@ $f-PN_thin          : return-value(fonts, PN_thin);
 	text-transform: uppercase;
 
 	padding-bottom: 60px;
+	padding-left: 15px;
+	padding-right: 15px;
 
 	position: relative;
-	z-index: 11;
+	z-index: 15;
 
 
 	&_bold {
@@ -106,9 +154,9 @@ $f-PN_thin          : return-value(fonts, PN_thin);
 
 	border: {
 		radius: $w-all;
-		width: 1px;
-		style: dashed;
-		color: $c-white-smoke;
+		width: 2px;
+		style: dotted;
+		color: $c-whisper;
 	}
 
 
@@ -134,18 +182,73 @@ $f-PN_thin          : return-value(fonts, PN_thin);
 
 
 	&__item {
-		flex: 1 300px;
+		//flex: 1 300px;
 
 
 		&-wrap {
 			max-width: 270px;
+
+			margin-left: calc(100% - 270px);
 		}
 
 
-		&-header {}
-		&-footer {}
-		&-icon {}
-		&-number {}
-		&-text {}
+		&-header {
+			position: relative;
+
+			margin-bottom: 40px;
+		}
+
+
+		&-number {
+			position: absolute;
+			top: 0;
+			right: 60px;
+
+			font: {
+				size: 18px;
+				family: $f-PN_bold;
+			}
+			color: $c-silver;
+		}
+
+
+		&-text {
+			font-size: 20px;
+			color: $c-dim-gray;
+		}
+	}
+}
+
+
+/* ROW LEFT/RIGHT */
+.row {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	@include mixinDimensions($w-all);
+
+
+	&__left {
+		left: 0;
+	}
+
+
+	&__right {
+		right: 0;
+	}
+
+
+	&__left,
+	&__right {
+		position: absolute;
+		top: 0;
+
+		overflow: hidden;
+	}
+
+
+	&__half {
+		@include mixinDimensions(50%, $w-all);
 	}
 }

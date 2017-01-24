@@ -1,0 +1,32 @@
+include ../_mixin/macrosMixin
+
+-
+    var innTitle = "Самое <span class='main__title_bold'>инновационное устройство</span></br>в мире для вашего авто";
+    var innText = [
+        "Флагманская камера Sony, снимающая настоящее Full HD видео",
+        "Удобное и понятное управление с Вашего смартфона",
+        "3 в 1: GPS, Glonass и оповещение про камерахы и превышениие скорости",
+        "Запатентованная AKENORI технология ‘Dark Room’, обеспечивающая максимально четкую съемку ночью"
+    ];
+
+section.innovation
+
+    +mainTitle("", innTitle)
+
+    .innovation__eclips.block__ellipse
+        img(
+            src="./img/img-diff-text.png"
+            alt="nx1"
+            title="nx1"
+            class="img_responsive block__ellipse-img"
+        )
+
+    img(
+        src="./img/img-innovation-device.png"
+        alt="Akenori device"
+        title="Akenori device"
+        class="img_responsive innovation__img"
+    )
+
+    .container
+        +mainList(" innovation__list", innText)

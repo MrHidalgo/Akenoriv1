@@ -9,7 +9,6 @@ mixin mainList(className, textArr)
             li.main__item
                 .main__item-wrap
                     .main__item-header
-                        i.main__item-icon
+                        i(class="main__item-icon-" + i)
                         span.main__item-number!= "0" + j
-                    .main__item-footer
-                        p.main__title-text!= textArr[i]
+                    p.main__item-text!= textArr[i]

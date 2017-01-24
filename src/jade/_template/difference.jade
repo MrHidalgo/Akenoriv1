@@ -3,9 +3,9 @@ include ../_mixin/macrosMixin
 -
     var diffTitle = "Этот девайс <span class='main__title_bold'>отличается от всех</span></br>видеорегистраторов что вы видели раньше";
     var diffText = [
-        "",
-        "",
-        ""
+        "Футуристичный инновационный дизайн, объединяющий стиль и функциональность",
+        "Уникальная система крепления – надежность и никаких дребезжаний",
+        "Эффект маскировки – видеорегистратор сливается с интерьером и не портит дизайн салона"
     ];
 
 section.difference
@@ -20,12 +20,12 @@ section.difference
             class="img_responsive block__ellipse-img"
         )
 
-    //img(
-    //    src="./img/img-diff-register.png"
-    //    alt="Akenori device"
-    //    title="Akenori device"
-    //    class="img_responsive "
-    //)
+    img(
+        src="./img/img-diff-register.png"
+        alt="Akenori device"
+        title="Akenori device"
+        class="img_responsive difference__img"
+    )
 
     .container
         +mainList(" difference__list", diffText)

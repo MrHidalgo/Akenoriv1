@@ -26,9 +26,32 @@ $c-white	        : return-value(color, white);
 	}
 
 
+	&__img {
+		position: relative;
+		z-index: 11;
+
+		margin: {
+			left: auto;
+			right: auto;
+		}
+	}
+
+
 	&__list {
 		.main__item {
 			width: (100 / 3) * 1%;
+		}
+	}
+}
+@each $className, $iconName in
+			(0, $sp-i-2-1-block-group),
+			(1, $sp-i-2-2-block-group),
+			(2, $sp-i-2-3-block-group)
+{
+	.difference__list {
+		.main__item-icon-#{$className} {
+			display: block;
+			@include retina-sprite($iconName);
 		}
 	}
 }
