@@ -4,10 +4,17 @@
 //@import "_template/special";
 //@import "_template/innovation";
 //@import "_template/price";
+//@import "_template/quality";
+//@import "_template/phone";
+//@import "_template/install";
+//@import "_template/slider";
+//@import "_template/nature";
+//@import "_template/city";
 
 /// MACROS TMPL
 @import "_template/_main/_macros/btn-social";
 
+/// MAIN FILES
 @import "_template/_main/_grid";
 @import "_template/_main/_base";
 @import "_template/_main/_main";

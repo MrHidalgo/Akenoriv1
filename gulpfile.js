@@ -3,9 +3,6 @@
 
 /* NPM PACKAGE */
 var gulp        =   require('gulp'),
-    plumber     =   require('gulp-plumber'),
-    notify      =   require('gulp-notify'),
-    args        =   require('yargs').argv,
     browserSync =   require('browser-sync').create(),
     reload      =   browserSync.reload,
 	watch       =   require('gulp-watch');
@@ -26,6 +23,8 @@ task.mainScriptTask(command.buildScript);
 
 task.imageSprites(command.sprites);
 
+task.mainImageTask(command.buildImg);
+
 
 
 /* WATCH FILES FOR RELOAD ---> 'gulp watch'*/
@@ -35,7 +34,8 @@ gulp.task(command.watch, function() {
     var srcWatchJADE = ['./src/jade/**.jade', './src/jade/**/**.jade'];
     var srcWatchJSON = ['./src/_data/*.json'];
     var srcWatchJS   = ['./src/js/**.js'];
-    var srcWatchPNG  = ['./src/icons/**.png'];
+    var srcWatchICON = ['./src/icons/**.png'];
+    var srcWatchIMG  = ['./src/image/*'];
 
     watch(srcWatchSCSS, function() {
         gulp.start(command.buildScss)
@@ -49,8 +49,11 @@ gulp.task(command.watch, function() {
     watch(srcWatchJSON, function() {
         gulp.start(command.buildJade)
     });
-    watch(srcWatchPNG, function() {
+    watch(srcWatchICON, function() {
         gulp.start(command.sprites)
+    });
+    watch(srcWatchIMG, function() {
+        gulp.start(command.buildImg)
     });
 });
 
@@ -72,10 +75,4 @@ gulp.task('browser-sync', function() {
 	gulp.task(command.build,
         config.mainConfig.build.arr
 	);
-}
-
-{
-    gulp.task(command.buildMinify,
-        config.mainConfig.buildMin.arr
-    );
 }

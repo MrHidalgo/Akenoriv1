@@ -1,11 +1,13 @@
 {
   "styleLink" : [
     "./css/fonts.min.css",
+    "./css/owl.carousel.min.css",
     "./css/common.min.css"
   ],
 
   "scriptLink" : [
     "./script/jquery-1.11.1.min.js",
+    "./script/owl.carousel.min.js",
     "./script/main.min.js"
   ]
 }

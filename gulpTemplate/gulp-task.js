@@ -6,7 +6,7 @@ var gulp                =   require('gulp'),
 	cssmin              =   require('gulp-minify-css'),
     sourcemaps          =   require('gulp-sourcemaps'),
 	spritesmith         =   require('gulp.spritesmith'),
-	imageMin            =   require('gulp-imagemin'),
+	imagemin            =   require('gulp-imagemin'),
 	pngComp             =   require('imagemin-pngquant'),
 	stripCssComments    =   require('gulp-strip-css-comments'),
 	notify              =   require('gulp-notify'),
@@ -24,10 +24,18 @@ var gulp                =   require('gulp'),
     prettify            =   require('gulp-prettify'),
     changed             =   require('gulp-changed-aster'),
     shell               =   require('gulp-shell'),
+    debug               =   require('gulp-debug'),
+    imagemin            =   require('gulp-tinypng'),
     YOUR_LOCALS         =   {};
 
 
 var command             =   require('./gulp-command.js');
+
+/* Error handler */
+var onError = function (err) {
+    console.log(err);
+    this.emit('end');
+};
 
 
 /* Twig Templates */
@@ -49,7 +57,9 @@ function getJsonData (file, cb) {
 function jadeMainTask(taskName) {
     return gulp.task(taskName, function() {
         gulp.src('./src/jade/*.jade')
-            .pipe(plumber())
+            .pipe(plumber({
+                errorHandler: onError
+            }))
             .pipe(changed('./dist/'))
             .pipe(data(getJsonData))
             .pipe(jade(
@@ -57,7 +67,7 @@ function jadeMainTask(taskName) {
                     pretty : true
                 }
             ))
-            .pipe(plumber.stop())
+            .pipe(debug({title: 'jade:'}))
             .pipe(gulp.dest('./dist/'))
             .pipe(notify(
                 {
@@ -75,24 +85,30 @@ function mainScriptTask(taskName) {
 
     return gulp.task(taskName, function () {
         gulp.src(src)
-            .pipe(plumber())
+            .pipe(plumber({
+                errorHandler: onError
+            }))
             .pipe(fixmyjs(
                 {
                     legacy : true
                 }
             ))
-            .pipe(plumber.stop())
+            .pipe(debug({title: 'fixmyjs:'}))
             .pipe(
                 gulp.dest(dist)
             )
-            .pipe(plumber())
-            .pipe(uglify())
-            .pipe(plumber.stop())
+            .pipe(uglify(
+                {
+                    compress: true
+                }
+            ))
+            .pipe(debug({title: 'uglify:'}))
             .pipe(rename(
                 {
                     suffix : '.min'
                 })
             )
+            .pipe(debug({title: 'rename:'}))
             .pipe(
                 gulp.dest(dist)
             )
@@ -118,7 +134,15 @@ function styleMainTask(taskName) {
 			browsers: [
 				'last 10 versions',
 				'> 1%',
-				'Firefox ESR'
+				'Firefox ESR',
+                'Chrome >= 31',
+                'Firefox >= 28',
+                'Edge >= 12',
+                'Explorer >= 9',
+                'iOS >= 7.1',
+                'Safari >= 6.1',
+                'Android >= 2.1',
+                'Opera >= 12.1'
 			]
 		};
 
@@ -127,7 +151,9 @@ function styleMainTask(taskName) {
 
 
         gulp.src(src)
-			.pipe(plumber())
+            .pipe(plumber({
+                errorHandler: onError
+            }))
             .pipe(changed(dest))
             .pipe(sourcemaps.init(
                 {
@@ -137,14 +163,16 @@ function styleMainTask(taskName) {
 			.pipe(scss(
 				sassOptions
 			).on('error', scss.logError))
+            .pipe(debug({title: 'scss:'}))
 			.pipe(prefixer(
 				autoPrefixOptions
 			))
-			.pipe(plumber.stop())
+            .pipe(debug({title: 'prefixer:'}))
 			.pipe(
 				gulp.dest(dest)
 			)
             .pipe(stripCssComments())
+            .pipe(debug({title: 'stripCssComments:'}))
             .pipe(
                 gulp.dest(dest)
             )
@@ -155,11 +183,13 @@ function styleMainTask(taskName) {
                     keepSpecialComments : 1
                 }
             ))
+            .pipe(debug({title: 'cssmin:'}))
             .pipe(rename(
                 {
                     suffix : '.min'
                 })
             )
+            .pipe(debug({title: 'rename:'}))
             .pipe(
                 gulp.dest(dest)
             )
@@ -178,12 +208,16 @@ function imageSprites(taskName) {
         var src, spImgPath, retinaspImgPath, destImg, destCss;
 
         src             = './src/icons/*.png';
-        spImgPath       = '../img/sprite_AKENORI1.png';
-        retinaspImgPath = '../img/sprite_AKENORI1@2x.png';
-        destImg         = './dist/img/';
+        spImgPath       = '../image/sprite_AKENORI1.png';
+        retinaspImgPath = '../image/sprite_AKENORI1@2x.png';
+        destImg         = './dist/image/';
         destCss         = './src/scss/_variable/';
 
         var spriteData = gulp.src(src)
+            .pipe(plumber({
+                errorHandler: onError
+            }))
+            .pipe(debug({title: 'spritesmith:'}))
             .pipe(spritesmith(
                 {
                     imgName         : 'sprite_AKENORI1.png',
@@ -195,10 +229,7 @@ function imageSprites(taskName) {
                             './src/icons/*@2x.png'
                         ],
                     retinaImgName   : 'sprite_AKENORI1@2x.png',
-                    algorithm       : 'top-down',
-                    algorithmOpts   : {
-                        sort : false
-                    },
+                    algorithm       : 'binary-tree',
                     padding         : 5,
                     cssVarMap       : function(sprite) {
                         sprite.name = 'sp-' + sprite.name;
@@ -216,9 +247,33 @@ function imageSprites(taskName) {
     });
 }
 
+function mainImageTask(taskName) {
+
+    var src     = "./src/image/*",
+        dest    = "./dist/image";
+
+    return gulp.task(taskName, function() {
+        gulp.src(src)
+            .pipe(plumber({
+                errorHandler: onError
+            }))
+            .pipe(imagemin('w2hECd9nCvKWfBj49LZrOPa6Ws7ws8uE'))
+            .pipe(debug({title: 'imagemin:'}))
+            .pipe(
+                gulp.dest(dest)
+            )
+            .pipe(notify(
+                {
+                    message: 'IMG task complete'
+                }
+            ))
+    });
+}
+
 
 
 module.exports.jadeMainTask         =   jadeMainTask;
 module.exports.styleMainTask        =   styleMainTask;
 module.exports.mainScriptTask       =   mainScriptTask;
 module.exports.imageSprites         =   imageSprites;
+module.exports.mainImageTask        =   mainImageTask;

@@ -140,6 +140,37 @@ $f-PN_thin          : return-value(fonts, PN_thin);
 }
 
 
+/* SUB TITLE */
+.sub__title {
+	font: {
+		size: 30px;
+		family: $f-PN_thin;
+	}
+	text-transform: uppercase;
+
+
+	&_bold {
+		font-family: $f-PN_bold;
+	}
+
+
+	&__line {
+		max-width: 80px;
+		height: 2px;
+
+		margin: {
+			top: 30px;
+			bottom: 30px;
+			left: 0;
+		};
+
+		border: none;
+
+		background-color: $c-dim-gray;
+	}
+}
+
+
 /* BLOCK ELLIPSE */
 .block__ellipse {
 	position: absolute;
@@ -220,6 +251,65 @@ $f-PN_thin          : return-value(fonts, PN_thin);
 }
 
 
+/* SUB LIST */
+.sub {
+	&__list {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+
+
+	&__item {
+		max-width: 320px;
+
+		margin-bottom: 30px;
+
+
+		&-left {
+			width: 11px;
+
+			padding-top: 5px;
+		}
+
+
+		&-right {
+			width: calc(100% - 11px);
+
+			padding: {
+				left: 10px;
+				right: 10px;
+			}
+		}
+
+
+		&-left,
+		&-right {
+			float: left;
+		}
+
+
+		&-circle {
+			display: block;
+
+			@include mixinDimensions(11px);
+
+			border: {
+				radius: $w-all;
+				width: 2px;
+				style: solid;
+				color: $c-dodger-blue;
+			}
+		}
+
+
+		&-text {
+			color: $c-neroLight;
+		}
+	}
+}
+
+
 /* ROW LEFT/RIGHT */
 .row {
 	position: absolute;
@@ -250,5 +340,130 @@ $f-PN_thin          : return-value(fonts, PN_thin);
 
 	&__half {
 		@include mixinDimensions(50%, $w-all);
+	}
+}
+
+
+/* BLOCK LEFT/RIGHT */
+.block {
+	&_left {
+		.block__left {
+			float: left;
+		}
+	}
+
+
+	&_right {
+		.block__right {
+			float: right;
+		}
+	}
+
+
+	.block__left,
+	.block__right {
+		@include mixinDimensions(1200px, 768px);
+
+		background-size: cover;
+		background-position: center;
+
+		@include respond-to(large-max) {
+			width: $w-all;
+		}
+	}
+}
+
+
+/* LEFT/RIGHT POSITION */
+.position {
+	position: absolute;
+	bottom: 0;
+
+	display: flex;
+	align-items: center;
+
+	@include mixinDimensions(1070px, calc(100% - 160px));
+
+
+	.right & {
+		right: 0;
+	}
+
+
+	.left & {
+		left: 0;
+	}
+
+
+	&__wrap {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+
+		width: $w-all;
+		min-height: 505px;
+
+		background-color: $c-white;
+		background-position: left bottom;
+		background-repeat: no-repeat;
+
+		box-shadow: 14.339px 20.479px 60px 0 rgba(18, 104, 145, 0.28);
+
+
+		.left & {
+			justify-content: flex-end;
+		}
+
+
+		.right & {
+			justify-content: flex-start;
+		}
+
+
+		&-content {
+			width: 770px;
+
+			padding-left: 70px;
+		}
+	}
+}
+
+
+/* OWL NAV/DOT */
+.owl {
+	&-prev {
+		@include retina-sprite($sp-i-9-0-block-group);
+		//@include respond-to(medium-max) {
+		//	@include retina-sprite($sp-i-prev-mobile-group);
+		//}
+
+
+		&:hover,
+		&:active {
+			//@include respond-to(extra-large) {
+			//	@include retina-sprite($sp-i-prev-h-group);
+			//}
+		}
+	}
+	&-next {
+		@include retina-sprite($sp-i-9-1-block-group);
+		//@include respond-to(medium-max) {
+		//	@include retina-sprite($sp-i-next-mobile-group);
+		//}
+
+
+		&:hover,
+		&:active {
+			//@include respond-to(extra-large) {
+			//	@include retina-sprite($sp-i-next-h-group);
+			//}
+		}
+	}
+	&-prev,
+	&-next {
+		font-size: 0;
+		display: inline-block;
+		vertical-align: middle;
 	}
 }

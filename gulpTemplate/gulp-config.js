@@ -7,15 +7,10 @@ var mainConfig = {
 		arr : [
 			commands.buildScss,
 			commands.buildJade,
-			commands.buildScript
+			commands.buildScript,
+			commands.sprites
 		]
-	},
-
-    buildMin   : {
-        arr : [
-            commands.minifyStyle
-        ]
-    }
+	}
 };
 
 

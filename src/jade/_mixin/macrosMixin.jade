@@ -2,6 +2,11 @@
 mixin mainTitle(className, text)
     p(class="main__title" + className)!= text
 
+//- SUB TITLE
+mixin subTitle(className, text)
+    p(class="sub__title" + className)!= text
+    hr.sub__title__line
+
 //- MAIN LIST
 mixin mainList(className, textArr)
     ul(class="main__list" + className)
@@ -12,3 +17,13 @@ mixin mainList(className, textArr)
                         i(class="main__item-icon-" + i)
                         span.main__item-number!= "0" + j
                     p.main__item-text!= textArr[i]
+
+//- SUB LIST
+mixin subList(className, textArr)
+    ul(class="sub__list" + className)
+        -for(var i = 0; i < textArr.length; i++)
+            li.sub__item.clearfix
+                .sub__item-left
+                    i.sub__item-circle
+                .sub__item-right
+                    p.sub__item-text!= textArr[i]
