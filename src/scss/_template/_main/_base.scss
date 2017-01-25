@@ -17,6 +17,7 @@ $c-neroLight        : return-value(color, neroLight);
 
 $f-PN_bold          : return-value(fonts, PN_bold);
 $f-PN_thin          : return-value(fonts, PN_thin);
+$f-PN_black         : return-value(fonts, PN_black);
 /* BTN */
 .btn {
 	@include mixinDimensions(300px, 56px);
@@ -137,6 +138,18 @@ $f-PN_thin          : return-value(fonts, PN_thin);
 	&_bold {
 		font-family: $f-PN_bold;
 	}
+
+
+	&_big {
+		font: {
+			size: 60px;
+			family: $f-PN_black;
+		}
+		color: $c-white;
+		line-height: 1;
+
+		padding-bottom: 30px;
+	}
 }
 
 
@@ -214,6 +227,7 @@ $f-PN_thin          : return-value(fonts, PN_thin);
 
 	&__item {
 		//flex: 1 300px;
+		margin-bottom: 60px;
 
 
 		&-wrap {

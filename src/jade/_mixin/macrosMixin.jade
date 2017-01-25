@@ -15,7 +15,7 @@ mixin mainList(className, textArr)
                 .main__item-wrap
                     .main__item-header
                         i(class="main__item-icon-" + i)
-                        span.main__item-number!= "0" + j
+                        span.main__item-number!= i < 9 ? "0" + j : j
                     p.main__item-text!= textArr[i]
 
 //- SUB LIST

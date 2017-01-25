@@ -1,0 +1,21 @@
+include ../_mixin/macrosMixin
+
+
+-
+    var qualityTitle = "Оцените <span class='main__title_bold'>качество съемки</span></br>AKENORI прямо сейчас!";
+
+
+section.quality
+
+    +mainTitle("", qualityTitle)
+
+    .quality__eclips.block__ellipse
+
+    .container.clearfix
+        .quality__row.clearfix
+            .quality__left
+            .quality__right
+
+
+        p.quality__text.quality__text_left!= "Качественная съемка и полная</br>видимость на дороге ночью"
+        p.quality__text.quality__text_right!= "Четкая картинка, без бликов</br>и засвечиваний днем"

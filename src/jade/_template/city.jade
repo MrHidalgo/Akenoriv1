@@ -1,0 +1,24 @@
+include ../_mixin/macrosMixin
+
+-
+    var citySubTitle = "Безопасность и стиль</br><span class='sub__title_bold'>в городе</span>";
+    var cityArr = [
+        "FULL HD видео, где можно рассмотреть мельчайшие детали, в том числе и номера машин",
+        "Уникальная технология ‘Dark Room’, обеспечивающая максимально высокое качество сьемки ночью",
+        "Управляйте видеорегистратором и всеми видеозаписями со своего смартфона",
+        "GPS и уведомления о ближайших камерах фиксации скорости – избавьтесь от штрафов"
+    ];
+
+section.city.right.clearfix
+
+    .block.block_left
+        .block__left
+
+    .city__wrap.position
+        .position__wrap.clearfix
+
+            .position__wrap-content
+
+                +subTitle("", citySubTitle)
+
+                +subList("", cityArr)

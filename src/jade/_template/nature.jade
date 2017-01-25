@@ -1,0 +1,24 @@
+include ../_mixin/macrosMixin
+
+-
+    var natureSubTitle = "Яркие впечатления</br><span class='sub__title_bold'>на природе</span>";
+    var natureArr = [
+        "Снимайте на память свои загородные поездки в формате FULL HD",
+        "Самые красивые пейзажи можно сразу же скачать на смартфон и поделиться в соцсетях",
+        "Надежное крепление, которое не отвалится и не будет дребезжать",
+        "Защита от пыли, грязи и других повреждение"
+    ];
+
+section.nature.left.clearfix
+
+    .block.block_right
+        .block__right
+
+    .nature__wrap.position
+        .position__wrap
+
+            .position__wrap-content
+
+                +subTitle("", natureSubTitle)
+
+                +subList("", natureArr)

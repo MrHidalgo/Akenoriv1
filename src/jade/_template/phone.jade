@@ -1,0 +1,26 @@
+include ../_mixin/macrosMixin
+
+
+-
+    var phoneTitle = "Akenori – первый видеорегистратор, которым</br>вы можете<span class='main__title_bold'>управлять с iPhone или Android смартфона.</span>";
+    var phoneText = [
+        "Отправляйте видео и информацию о вашей поездке онлайн на смартфон, почту, мессенджеры или в социальные сети.",
+        "Обновляйте прошивку и актуальную информацию о камерах на дорогах",
+        "Меняйте настройки видеорегистратора прямо в приложении"
+    ];
+
+section.phone
+
+    +mainTitle("", phoneTitle)
+
+    .phone__eclips.block__ellipse
+
+    img(
+        src="./image/img-phone.png"
+        title="phone"
+        alt="phone"
+        class="img_responsive phone__img"
+    )
+
+    .container
+        +mainList(" phone__list", phoneText)

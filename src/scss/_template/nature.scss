@@ -1,0 +1,28 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+///
+/// DECLARATION VARIABLE
+///
+$w-all            : return-value(dimension, all);
+
+$c-white	        : return-value(color, white);
+///
+/// MAIN
+///
+.nature {
+	position: relative;
+
+	padding-top: 160px;
+
+
+	.block__right {
+		background-image: url("../image/img-nature.png");
+	}
+
+
+	&__wrap {
+		.position__wrap {
+			background-image: url("../image/img-nature-bg.png");
+		}
+	}
+}

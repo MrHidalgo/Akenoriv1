@@ -1,0 +1,63 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../_variable/sprite_AKENORI1";
+///
+/// DECLARATION VARIABLE
+///
+$w-all            : return-value(dimension, all);
+
+$c-white	        : return-value(color, white);
+$c-dodger-blue    : return-value(color, dodger-blue);
+
+$f-PN_bold        : return-value(fonts, PN_bold);
+///
+/// MAIN
+///
+.install {
+	min-height: 170px;
+
+	background-color: $c-dodger-blue;
+
+	text-align: center;
+
+
+	&__row {
+		min-height: 170px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+
+	&__title {
+		display: inline-block;
+
+		font: {
+			size: 25px;
+			family: $f-PN_bold;
+		}
+		color: $c-white;
+		text-transform: uppercase;
+
+		padding-right: 60px;
+	}
+
+
+	&__android {
+		@include retina-sprite($sp-i-8-0-block-group);
+
+		margin-right: 60px;
+	}
+
+
+	&__apple {
+		@include retina-sprite($sp-i-8-1-block-group);
+	}
+
+
+	&__android,
+	&__apple {
+		display: inline-block;
+	}
+}

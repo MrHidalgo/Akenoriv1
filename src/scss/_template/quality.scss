@@ -1,0 +1,77 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+///
+/// DECLARATION VARIABLE
+///
+$w-all            : return-value(dimension, all);
+
+$c-white	        : return-value(color, white);
+$c-dim-gray       : return-value(color, dim-gray);
+///
+/// MAIN
+///
+.quality {
+	position: relative;
+
+	padding-top: 160px;
+	padding-bottom: 160px;
+
+
+	&__eclips {
+		top: 100px;
+
+		@include mixinDimensions(673px);
+
+
+		&.block__ellipse {
+			z-index: 11;
+		}
+	}
+
+
+	&__row {
+		height: 505px;
+
+		box-shadow: 14.339px 20.479px 60px 0 rgba(18, 104, 145, 0.28);
+	}
+
+
+	&__left {
+		background-image: url("../image/img-quality-left.png");
+	}
+
+
+	&__right {
+		background-image: url("../image/img-quality-right.png");
+	}
+
+
+	&__left,
+	&__right {
+		float: left;
+
+		@include mixinDimensions(50%, $w-all);
+
+		background-size: cover;
+		background-position: center;
+	}
+
+
+	&__text {
+		font: {
+			size: 20px;
+		}
+		color: $c-dim-gray;
+		text-align: center;
+
+		padding-top: 60px;
+
+
+		&_left,
+		&_right {
+			float: left;
+
+			width: 50%;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+include ../_mixin/macrosMixin
+
+-
+    var offerTitle = "Спецпредложение";
+
+section.offer
+
+    .offer__eclips.block__ellipse
+        img(
+            src="./image/img-diff-text.png"
+            alt="nx1"
+            title="nx1"
+            class="img_responsive block__ellipse-img"
+        )
+
+    +mainTitle(" main__title_big", offerTitle)
+
+    p.offer__title!= "Закажите AKENORI прямо сейчас и</br>получите тест-драйв 30 дней!"
+
+    img(
+        src="./image/img-offer-device.png"
+        alt="Akenori device"
+        title="Akenori device"
+        class="img_responsive offer__img"
+    )
