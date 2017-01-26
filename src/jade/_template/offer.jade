@@ -23,3 +23,30 @@ section.offer
         title="Akenori device"
         class="img_responsive offer__img"
     )
+
+    p.offer__title-sub!= "Если вам не понравится, в течение 30 дней вы можете</br>вернуть устройство производителю."
+
+    p.offer__price!= "15 000"
+
+    .container
+        .offer__row
+
+            p.offer__text!= "До конца акции осталось"
+
+            .offer__wrap
+                .offer__wrap-day.offer__circle
+                    span.offer__wrap-num!= "10"
+                    | дней
+                .offer__wrap-hours.offer__circle
+                    span.offer__wrap-num!= "10"
+                    | часов
+                .offer__wrap-minute.offer__circle
+                    span.offer__wrap-num!= "10"
+                    | минут
+
+            a(
+                href="javascript:void(0);"
+                title=""
+                class="btn btn_white"
+            )!= "Купить"
+

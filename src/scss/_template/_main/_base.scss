@@ -67,6 +67,16 @@ $f-PN_black         : return-value(fonts, PN_black);
 	}
 
 
+	&-delivery {
+		display: block;
+
+		margin: {
+			left: auto;
+			right: auto;
+		};
+	}
+
+
 	&_white-arr {
 		background-color: $c-white;
 
@@ -105,8 +115,16 @@ $f-PN_black         : return-value(fonts, PN_black);
 	}
 
 
+	&_blue {
+		background-color: $c-dodger-blue;
+
+		color: $c-white;
+	}
+
+
 	&_white-arr,
 	&_white,
+	&_blue,
 	&_dark {
 		transition: all .3s ease-in-out;
 

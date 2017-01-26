@@ -1,0 +1,31 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+///
+/// DECLARATION VARIABLE
+///
+$w-all            : return-value(dimension, all);
+
+$c-white	        : return-value(color, white);
+$c-nero 	        : return-value(color, nero);
+///
+/// MAIN
+///
+.footer {
+	height: 110px;
+
+	background-color: $c-nero;
+
+
+	&__logotype {
+		float: left;
+
+		padding-top: 45px;
+	}
+
+
+	&__social {
+		float: right;
+
+		padding-top: 47px;
+	}
+}

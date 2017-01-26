@@ -1,0 +1,25 @@
+
+section.device
+
+    .container
+        .device__btn-wrap
+            a(
+                href="javascript:void(0);"
+                title=""
+                class="device__btn active"
+            )!= "Устройство"
+            a(
+                href="javascript:void(0);"
+                title=""
+                class="device__btn"
+            )!= "Комплектация"
+
+        .owl-carousel.device__carousel
+            -for(var i = 0; i < 4; i++)
+                .device__item
+                    img(
+                        src="./image/img-device-carousel.png"
+                        alt=""
+                        title=""
+                        class="device__img"
+                    )

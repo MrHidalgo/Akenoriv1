@@ -1,17 +1,22 @@
 /// MAIN TMPL
-//@import "_template/header";
-//@import "_template/difference";
-//@import "_template/special";
-//@import "_template/innovation";
-//@import "_template/price";
-//@import "_template/quality";
-//@import "_template/phone";
-//@import "_template/install";
-//@import "_template/slider";
-//@import "_template/nature";
-//@import "_template/city";
-//@import "_template/technical";
+@import "_template/header";
+@import "_template/difference";
+@import "_template/special";
+@import "_template/innovation";
+@import "_template/price";
+@import "_template/quality";
+@import "_template/phone";
+@import "_template/install";
+@import "_template/slider";
+@import "_template/nature";
+@import "_template/city";
+@import "_template/technical";
 @import "_template/offer";
+@import "_template/device";
+@import "_template/information";
+@import "_template/testimonials";
+@import "_template/delivery";
+@import "_template/footer";
 
 /// MACROS TMPL
 @import "_template/_main/_macros/btn-social";

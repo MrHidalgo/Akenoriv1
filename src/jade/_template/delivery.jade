@@ -1,0 +1,37 @@
+-
+    var deliveryText = [
+        "Доставка по всей России",
+        "Срок от 1 до 5 дней",
+        "Оплата при получении либо онлайн"
+    ];
+
+
+section.delivery
+
+    .row
+        .row__left.row__half
+        .row__right.row__half
+            img(
+                src="./image/img-delivery.png"
+                title="delivery"
+                alt="delivery"
+                class="img_responsive delivery__img"
+            )
+
+    .container
+        .delivery__row
+            i.delivery__icon
+
+            ul.delivery__list
+                - for(var i = 0; i < deliveryText.length; i++)
+                    li.delivery__item
+                        .delivery__item-left
+                            i.delivery__item-icon
+
+                        p.delivery__item-text!= deliveryText[i]
+
+        a(
+            href="javascript:void(0);"
+            title=""
+            class="btn btn_blue btn-delivery"
+        )!= "Купить"

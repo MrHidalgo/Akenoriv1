@@ -1,0 +1,178 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+///
+/// DECLARATION VARIABLE
+///
+$w-all            : return-value(dimension, all);
+
+$c-white	        : return-value(color, white);
+$c-dodger-blue    : return-value(color, dodger-blue);
+
+$f-PN_light        : return-value(fonts, PN_light);
+$f-PN_extraBold   : return-value(fonts, PN_extraBold);
+///
+/// MAIN
+///
+.information {
+	position: relative;
+
+	height: 765px;
+
+
+	&__left {
+		left: 0;
+
+		background-image: url("../image/img-information-left.png");
+		background-position: left;
+	}
+
+
+	&__right {
+		right: 0;
+
+		background-image: url("../image/img-information-right.png");
+		background-position: right;
+	}
+
+
+	&__left,
+	&__right {
+		position: absolute;
+		top: 0;
+
+		@include mixinDimensions(50%, $w-all);
+
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+
+	&__bottom {
+		position: absolute;
+		z-index: 11;
+		bottom: 110px;
+		left: 0;
+		right: 0;
+
+		margin: {
+			left: auto;
+			right: auto;
+		};
+
+		@include mixinDimensions(83px);
+
+		border: {
+			width: 1px;
+			style: dashed;
+			color: $c-dodger-blue;
+			radius: $w-all;
+		}
+
+
+		&-internal {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+
+			margin: auto;
+
+			@include mixinDimensions(65px);
+
+			border: {
+				width: 1px;
+				style: dashed;
+				color: $c-dodger-blue;
+				radius: $w-all;
+			}
+		}
+	}
+
+
+	&__img {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 20px;
+
+		margin: {
+			left: auto;
+			right: auto;
+		};
+	}
+
+
+	&__row-left {
+		padding-right: 100px;
+	}
+
+
+	&__row-right {
+		padding-left: 100px;
+	}
+
+
+	&__row-left,
+	&__row-right {
+		float: left;
+
+		@include mixinDimensions(50%, $w-all);
+
+		padding-top: 60px;
+	}
+
+
+	&__title {
+		font: {
+			size: 30px;
+			family: $f-PN_light;
+		}
+		color: $c-white;
+		text-transform: uppercase;
+
+		margin-bottom: 69px;
+
+
+		&_bold {
+			font-family: $f-PN_extraBold;
+		}
+	}
+
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+	}
+
+
+	&__item {
+		display: flex;
+
+		font-size: 18px;
+		color: $c-white;
+
+		margin-bottom: 30px;
+
+
+		&-left {
+			min-width: 30px;
+
+			padding-top: 5px;
+		}
+	}
+
+
+	&__circle {
+		display: block;
+
+		@include mixinDimensions(15px);
+
+		border: {
+			width: 2px;
+			style: solid;
+			color: $c-white;
+			radius: $w-all;
+		}
+	}
+}

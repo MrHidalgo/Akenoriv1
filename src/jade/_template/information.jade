@@ -1,0 +1,51 @@
+-
+    var infArrLeft = [
+        "Вы на дороге не защищены",
+        "В случае подставы от пешехода-афериста, вас могут обвинить или шантажировать.",
+        "Если случится ДТП, будет трудно доказать свою правоту в суде",
+        "Страховая компания будет долго и дотошно рассматривать ваш страховой случай",
+        "А если вы увидите что-то интересное, например, метеорит, то никто об этом не узнает."
+    ];
+    var infArrright = [
+        "Вы защищены от подстав – видео доказывает невиновность.",
+        "Научно доказано: видеорегистратор отпугивает недобросовестных сотрудников ГИБДД :)",
+        "Видео с регистратора с GPS является доказательством в суде",
+        "AKENORI уведомляет про камеры фиксации скорости и превышение скоростного режима</br>Метеориты, милые олени и красивые закаты – лучшие моменты вашей поездки останутся на память"
+    ];
+
+
+mixin informationList(arrText)
+    ul.information__list
+        -for(var i = 0; i < arrText.length; i++)
+            li.information__item
+                .information__item-left
+                    i.information__circle
+                .information__item-right
+                    p.information__text!= arrText[i]
+
+
+
+section.information.clearfix
+    .information__left
+    .information__right
+    .information__bottom
+        .information__bottom-internal
+
+    img(
+        src="./image/img-information-car.png"
+        title=""
+        alt=""
+        class="information__img img_responsive"
+    )
+
+    .container.clearfix
+        .information__row-left
+            p.information__title!= "Поездка</br><span class='information__title_bold'>без видеорегистратора</span>"
+
+            +informationList(infArrLeft)
+
+        .information__row-right
+            p.information__title!= "Поездка</br><span class='information__title_bold'>с AKENORI</span>"
+
+            +informationList(infArrright)
+

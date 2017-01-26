@@ -1,0 +1,136 @@
+@import "../_mixin/mixin";
+@import "../_function/function";
+///
+/// DECLARATION VARIABLE
+///
+$w-all            : return-value(dimension, all);
+
+$c-white	        : return-value(color, white);
+$c-dodger-blue    : return-value(color, dodger-blue);
+$c-silver         : return-value(color, silver);
+
+$f-PN_extraBold   : return-value(fonts, PN_extraBold);
+$f-PN_bold        : return-value(fonts, PN_bold);
+///
+/// MAIN
+///
+.testimonials {
+	position: relative;
+
+	padding: {
+		top: 160px;
+		bottom: 140px;
+	};
+
+
+	&__eclips {
+		top: 100px;
+
+		@include mixinDimensions(673px);
+	}
+
+
+	&__row {
+		position: relative;
+		z-index: 15;
+
+		height: 505px;
+
+		background-color: $c-white;
+		box-shadow: 14.339px 20.479px 60px 0 rgba(18, 104, 145, 0.28);
+
+
+		&-left {
+			width: 500px;
+
+			padding: {
+				top: 140px;
+				left: 60px;
+				right: 40px;
+			};
+		}
+
+
+		&-right {
+			width: calc(100% - 500px);
+
+			background-image: url("../image/img-quality-right.png");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+
+		&-left,
+		&-right {
+			float: left;
+
+			height: $w-all;
+		}
+	}
+
+
+	&__item {
+		&-top {
+			margin-bottom: 20px;
+		}
+	}
+
+
+	&__name {
+		font-family: $f-PN_extraBold;
+	}
+
+
+	&__city {
+		text-align: center;
+	}
+
+
+	&__name,
+	&__city {
+		float: left;
+
+		width: 50%;
+
+		font-size: 25px;
+	}
+
+
+	.owl {
+		&-nav,
+		&-dots {
+			position: absolute;
+			top: -90px;
+		}
+
+		&-next {
+			margin-left: 70px;
+		}
+
+
+		&-dots {
+			right: 0;
+		}
+
+
+		&-dot {
+			display: inline-block;
+			vertical-align: middle;
+
+			font: {
+				size: 18px;
+				family: $f-PN_bold;
+			}
+			color: $c-silver;
+
+			margin-right: 20px;
+
+
+			&.active {
+				font-size: 22px;
+				color: $c-dodger-blue;
+			}
+		}
+	}
+}
