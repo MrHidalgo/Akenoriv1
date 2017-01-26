@@ -9,7 +9,9 @@ var command = {
 
 	buildImg        :   'compress:img',
 
-	sprites         :   'sprite'
+	sprites         :   'sprite',
+
+    cleanImage      :   'clean:img'
 };
 
 

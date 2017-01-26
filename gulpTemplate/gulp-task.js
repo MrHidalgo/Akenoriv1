@@ -23,9 +23,12 @@ var gulp                =   require('gulp'),
     fixmyjs             =   require("gulp-fixmyjs"),
     prettify            =   require('gulp-prettify'),
     changed             =   require('gulp-changed-aster'),
+    changedInPlace      =   require('gulp-changed-in-place'),
     shell               =   require('gulp-shell'),
     debug               =   require('gulp-debug'),
     imagemin            =   require('gulp-tinypng'),
+    del                 =   require('del'),
+    clean               =   require('gulp-clean'),
     YOUR_LOCALS         =   {};
 
 
@@ -60,7 +63,8 @@ function jadeMainTask(taskName) {
             .pipe(plumber({
                 errorHandler: onError
             }))
-            .pipe(changed('./dist/'))
+            // .pipe(changed('app', {hasChanged: changed.compareSha1Digest}))
+            .pipe(changedInPlace())
             .pipe(data(getJsonData))
             .pipe(jade(
                 {
@@ -69,11 +73,11 @@ function jadeMainTask(taskName) {
             ))
             .pipe(debug({title: 'jade:'}))
             .pipe(gulp.dest('./dist/'))
-            .pipe(notify(
-                {
-                    message: 'JADE task complete'
-                }
-            ));
+            // .pipe(notify(
+            //     {
+            //         message: 'JADE task complete'
+            //     }
+            // ));
     })
 }
 
@@ -88,6 +92,8 @@ function mainScriptTask(taskName) {
             .pipe(plumber({
                 errorHandler: onError
             }))
+            // .pipe(changed('app', {hasChanged: changed.compareSha1Digest}))
+            .pipe(changedInPlace())
             .pipe(fixmyjs(
                 {
                     legacy : true
@@ -112,11 +118,11 @@ function mainScriptTask(taskName) {
             .pipe(
                 gulp.dest(dist)
             )
-            .pipe(notify(
-                {
-                    message: 'SCRIPT task complete'
-                }
-            ));
+            // .pipe(notify(
+            //     {
+            //         message: 'SCRIPT task complete'
+            //     }
+            // ));
     });
 }
 
@@ -143,7 +149,8 @@ function styleMainTask(taskName) {
                 'Safari >= 6.1',
                 'Android >= 2.1',
                 'Opera >= 12.1'
-			]
+			],
+            cascade: true
 		};
 
 		var src  = './src/scss/**.scss',
@@ -154,7 +161,8 @@ function styleMainTask(taskName) {
             .pipe(plumber({
                 errorHandler: onError
             }))
-            .pipe(changed(dest))
+            // .pipe(changed('app', {hasChanged: changed.compareSha1Digest}))
+            .pipe(changedInPlace())
             .pipe(sourcemaps.init(
                 {
                     loadMaps: true
@@ -193,13 +201,14 @@ function styleMainTask(taskName) {
             .pipe(
                 gulp.dest(dest)
             )
-            .pipe(notify(
-                {
-                    message: 'STYLE task complete'
-                }
-            ));
+            // .pipe(notify(
+            //     {
+            //         message: 'STYLE task complete'
+            //     }
+            // ));
 	});
 }
+
 
 function imageSprites(taskName) {
 
@@ -247,6 +256,7 @@ function imageSprites(taskName) {
     });
 }
 
+
 function mainImageTask(taskName) {
 
     var src     = "./src/image/*",
@@ -257,19 +267,24 @@ function mainImageTask(taskName) {
             .pipe(plumber({
                 errorHandler: onError
             }))
+            // .pipe(changed('app', {hasChanged: changed.compareSha1Digest}))
+            // .pipe(changedInPlace())
             .pipe(imagemin('w2hECd9nCvKWfBj49LZrOPa6Ws7ws8uE'))
             .pipe(debug({title: 'imagemin:'}))
             .pipe(
                 gulp.dest(dest)
             )
-            .pipe(notify(
-                {
-                    message: 'IMG task complete'
-                }
-            ))
+            // .on("end", function() {
+            //     del.sync(src);
+            // })
+            // .pipe(debug({title: 'del:'}))
+            // .pipe(notify(
+            //     {
+            //         message: 'IMG task complete'
+            //     }
+            // ))
     });
 }
-
 
 
 module.exports.jadeMainTask         =   jadeMainTask;
