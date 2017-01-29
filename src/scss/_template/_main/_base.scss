@@ -30,6 +30,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 	text-transform: uppercase;
 	text-align: center;
 
+	@include respond-to(small-max) {
+		width: 290px;
+	}
+
 
 	&-buy {
 		position: relative;
@@ -64,6 +68,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 		};
 
 		text-align: center;
+
+		@include respond-to(small-max) {
+			bottom: 30px;
+		}
 	}
 
 
@@ -152,6 +160,20 @@ $f-PN_black         : return-value(fonts, PN_black);
 	position: relative;
 	z-index: 15;
 
+	@include respond-to(large) {
+		font-size: 33px;
+	}
+	@include respond-to(medium) {
+		font-size: 30px;
+
+		padding-bottom: 40px;
+	}
+	@include respond-to(small-max) {
+		font-size: 20px;
+
+		padding-bottom: 30px;
+	}
+
 
 	&_bold {
 		font-family: $f-PN_bold;
@@ -230,6 +252,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 		right: 0;
 
 		margin: auto;
+
+		@include respond-to(small-max) {
+			display: none !important;
+		}
 	}
 }
 
@@ -244,14 +270,28 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 
 	&__item {
-		//flex: 1 300px;
 		margin-bottom: 60px;
+
+		@include respond-to(small-max) {
+			margin-bottom: 30px;
+		}
 
 
 		&-wrap {
 			max-width: 270px;
 
 			margin-left: calc(100% - 270px);
+
+			@include respond-to(large-max) {
+				max-width: 100%;
+
+				margin-left: 0;
+
+				padding-right: 15px;
+			}
+			@include respond-to(small-max) {
+				padding-right: 0;
+			}
 		}
 
 
@@ -265,19 +305,27 @@ $f-PN_black         : return-value(fonts, PN_black);
 		&-number {
 			position: absolute;
 			top: 0;
-			right: 60px;
+			right: 15px;
 
 			font: {
 				size: 18px;
 				family: $f-PN_bold;
 			}
 			color: $c-silver;
+
+			@include respond-to(small-max) {
+				font-size: 16px;
+			}
 		}
 
 
 		&-text {
 			font-size: 20px;
 			color: $c-dim-gray;
+
+			@include respond-to(small-max) {
+				font-size: 18px;
+			}
 		}
 	}
 }

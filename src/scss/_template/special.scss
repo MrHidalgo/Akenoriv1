@@ -21,6 +21,13 @@ $c-white	        : return-value(color, white);
 
 		@include mixinDimensions(473px);
 
+		@include respond-to(small) {
+			@include mixinDimensions(450px);
+		}
+		@include respond-to(extra-small) {
+			@include mixinDimensions(300px);
+		}
+
 
 		&.block__ellipse {
 			z-index: 11;
@@ -53,6 +60,13 @@ $c-white	        : return-value(color, white);
 
 		height: 725px;
 
+		@include respond-to(small) {
+			height: 625px;
+		}
+		@include respond-to(extra-small) {
+
+		}
+
 
 		.row__left {
 			background-image: url("../image/img-special-left.png");
@@ -77,12 +91,20 @@ $c-white	        : return-value(color, white);
 		&-left {
 			right: 0;
 			bottom: 116px;
+
+			@include respond-to(small-max) {
+				bottom: 20px;
+			}
 		}
 
 
 		&-right {
 			left: 0;
 			bottom: 119px;
+
+			@include respond-to(small-max) {
+				bottom: 23px;
+			}
 		}
 
 

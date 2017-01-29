@@ -37,6 +37,10 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 
 	&__text {
 		font-size: 25px;
+
+		@include respond-to(small-max) {
+			font-size: 20px;
+		}
 	}
 
 
@@ -44,6 +48,13 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 		font:{
 			size: 70px;
 			family: $f-PN_extraBold;
+		}
+
+		@include respond-to(medium-max) {
+			font-size: 50px;
+		}
+		@include respond-to(medium-max) {
+			font-size: 45px;
 		}
 
 
