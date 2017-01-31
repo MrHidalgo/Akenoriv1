@@ -28,7 +28,7 @@ $c-dim-gray       : return-value(color, dim-gray);
 			bottom: 50px;
 		};
 	}
-	@include respond-to(medium-max) {
+	@include respond-to(small-max) {
 		padding: {
 			top: 40px;
 			bottom: 10px;
@@ -55,6 +55,8 @@ $c-dim-gray       : return-value(color, dim-gray);
 
 		@include respond-to(medium) {
 			top: 40px;
+
+			@include mixinDimensions(500px);
 		}
 		@include respond-to(small) {
 			top: 30px;
@@ -78,6 +80,15 @@ $c-dim-gray       : return-value(color, dim-gray);
 		height: 505px;
 
 		box-shadow: 14.339px 20.479px 60px 0 rgba(18, 104, 145, 0.28);
+
+		@include respond-to(medium-max) {
+			height: 310px;
+		}
+		@include respond-to(small-max) {
+			height: auto;
+
+			box-shadow: none;
+		}
 	}
 
 
@@ -99,6 +110,17 @@ $c-dim-gray       : return-value(color, dim-gray);
 
 		background-size: cover;
 		background-position: center;
+
+		@include respond-to(small-max) {
+			float: none;
+
+			@include mixinDimensions($w-all, 310px);
+
+			box-shadow: 14.339px 20.479px 60px 0 rgba(18, 104, 145, 0.28);
+		}
+		@include respond-to(extra-small) {
+			height: 170px;
+		}
 	}
 
 
@@ -111,12 +133,47 @@ $c-dim-gray       : return-value(color, dim-gray);
 
 		padding-top: 60px;
 
+		@include respond-to(small-max) {
+			font-size: 16px;
+		}
+		@include respond-to(extra-small) {
+			padding-top: 30px;
+		}
+
+
+		&_hide {
+			float: none;
+			display: none;
+
+			padding-bottom: 60px;
+
+			@include respond-to(small-max) {
+				display: block !important;
+			}
+			@include respond-to(extra-small) {
+				padding-bottom: 30px;
+			}
+		}
+
+
+		&_left {
+			@include respond-to(small-max) {
+				display: none;
+			}
+		}
+
 
 		&_left,
 		&_right {
 			float: left;
 
 			width: 50%;
+
+			@include respond-to(small-max) {
+				float: none;
+
+				width: $w-all;
+			}
 		}
 	}
 }

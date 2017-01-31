@@ -20,6 +20,22 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 
 	text-align: center;
 
+	@include respond-to(small-max) {
+		min-height: 120px;
+	}
+
+
+	.container {
+		padding: {
+			left: 0;
+			right: 0;
+		};
+
+		@include respond-to(large-max) {
+			max-width: 100%;
+		}
+	}
+
 
 	&__row {
 		min-height: 170px;
@@ -27,6 +43,11 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex-flow: row wrap;
+
+		@include respond-to(small-max) {
+			min-height: 120px;
+		}
 	}
 
 
@@ -41,6 +62,13 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 		text-transform: uppercase;
 
 		padding-right: 60px;
+
+
+		@include respond-to(small-max) {
+			width: $w-all;
+
+			padding-right: 0;
+		}
 	}
 
 

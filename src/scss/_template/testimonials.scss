@@ -22,11 +22,57 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 		bottom: 140px;
 	};
 
+	@include respond-to(large) {
+		padding: {
+			top: 120px;
+			bottom: 100px;
+		};
+	}
+	@include respond-to(medium-max) {
+		padding: {
+			top: 60px;
+			bottom: 50px;
+		};
+	}
+	@include respond-to(small-max) {
+		padding: {
+			top: 30px;
+			bottom: 25px;
+		};
+	}
+
+
+	.container {
+		padding: {
+			left: 0;
+			right: 0;
+		};
+
+		@include respond-to(large-max) {
+			max-width: 100%;
+			min-width: auto;
+		}
+	}
+
 
 	&__eclips {
 		top: 100px;
 
 		@include mixinDimensions(673px);
+
+		@include respond-to(medium) {
+			top: 60px;
+		}
+		@include respond-to(small) {
+			top: 30px;
+
+			@include mixinDimensions(450px);
+		}
+		@include respond-to(extra-small) {
+			top: 15px;
+
+			@include mixinDimensions(300px);
+		}
 	}
 
 
@@ -39,8 +85,16 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 		background-color: $c-white;
 		box-shadow: 14.339px 20.479px 60px 0 rgba(18, 104, 145, 0.28);
 
+		@include respond-to(medium-max) {
+			height: auto;
+
+			box-shadow: none;
+		}
+
 
 		&-left {
+			float: left;
+
 			width: 500px;
 
 			padding: {
@@ -48,29 +102,75 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 				left: 60px;
 				right: 40px;
 			};
+
+			@include respond-to(medium-max) {
+				position: relative;
+				z-index: 15;
+
+				top: -30px;
+
+				width: calc(100% - 120px);
+
+				margin: {
+					left: auto;
+					right: auto;
+				};
+				padding: {
+					left: 100px;
+					right: 100px;
+					bottom: 50px;
+				};
+
+				background-color: $c-white;
+				box-shadow: 14.339px 20.479px 60px 0 rgba(18, 104, 145, 0.28);
+			}
+			@include respond-to(small-max) {
+				width: $w-all;
+				padding: 100px 15px 15px;
+			}
 		}
 
 
 		&-right {
+			float: right;
+
 			width: calc(100% - 500px);
 
 			background-image: url("../image/img-quality-right.png");
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
+
+			@include respond-to(medium-max) {
+				width: $w-all;
+			}
+			@include respond-to(medium) {
+				height: 505px !important;
+			}
+			@include respond-to(small) {
+				height: 305px !important;
+			}
+			@include respond-to(extra-small) {
+				height: 160px !important;
+			}
 		}
 
 
 		&-left,
 		&-right {
-			float: left;
-
 			height: $w-all;
+
+			@include respond-to(medium-max) {
+				float: none;
+			}
 		}
 	}
 
 
 	&__item {
+		margin-right: 30px;
+
+
 		&-top {
 			margin-bottom: 20px;
 		}
@@ -84,6 +184,10 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 
 	&__city {
 		text-align: center;
+
+		@include respond-to(small-max) {
+			text-align: right;
+		}
 	}
 
 
@@ -94,6 +198,10 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 		width: 50%;
 
 		font-size: 25px;
+
+		@include respond-to(small-max) {
+			font-size: 16px;
+		}
 	}
 
 
@@ -104,13 +212,76 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 			top: -90px;
 		}
 
-		&-next {
-			margin-left: 70px;
+
+		&-nav {
+			@include respond-to(medium-max) {
+				position: absolute;
+
+				width: $w-all;
+
+				left: 0;
+			}
+			@include respond-to(medium) {
+				top: 50%;
+
+				margin-top: -23px;
+			}
+			@include respond-to(small-max) {
+				top: -75px;
+			}
 		}
 
 
 		&-dots {
 			right: 0;
+			@include respond-to(medium-max) {
+				right: auto;
+				left: 0;
+			}
+			@include respond-to(small-max) {
+				top: -63px;
+				right: 0;
+
+				width: calc(100% - 60px);
+
+				margin: {
+					left: auto;
+					right: auto;
+				};
+
+				text-align: center;
+			}
+		}
+
+
+		&-next {
+			margin-left: 70px;
+		}
+
+
+		&-next {
+			@include respond-to(medium) {
+				right: -60px;
+			}
+			@include respond-to(small-max) {
+				right: 0;
+			}
+		}
+		&-prev {
+			@include respond-to(medium) {
+				left: -60px;
+			}
+			@include respond-to(small-max) {
+				left: 0;
+			}
+		}
+
+
+		&-next,
+		&-prev {
+			@include respond-to(medium-max) {
+				position: absolute;
+			}
 		}
 
 
@@ -125,6 +296,13 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 			color: $c-silver;
 
 			margin-right: 20px;
+
+			@include respond-to(small-max) {
+				margin: {
+					left: 10px;
+					right: 10px;
+				};
+			}
 
 
 			&.active {

@@ -14,6 +14,22 @@ $c-white	        : return-value(color, white);
 
 	padding-top: 160px;
 
+	@include respond-to(large) {
+		padding: {
+			top: 120px;
+		};
+	}
+	@include respond-to(medium-max) {
+		padding: {
+			top: 80px;
+		};
+	}
+	@include respond-to(small-max) {
+		padding: {
+			top: 40px;
+		};
+	}
+
 
 	.block__left {
 		background-image: url("../image/img-city.png");

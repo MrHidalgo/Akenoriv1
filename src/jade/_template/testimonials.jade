@@ -14,19 +14,19 @@ section.testimonials
     +mainTitle("", testimonialsTitle)
 
 
-    .container
-        .testimonials__row.clearfix
+    .container-fluid
+        .container
+            .testimonials__row.clearfix
 
-            .testimonials__row-left
-                .owl-carousel.testimonials__carousel
+                .testimonials__row-right
 
-                    - for(var i = 0; i < 3; i++)
-                        .testimonials__item
-                            .testimonials__item-top.clearfix
-                                span.testimonials__name!= "Имя Отчество"
-                                span.testimonials__city!= "Город"
+                .testimonials__row-left
+                    .owl-carousel.testimonials__carousel
 
-                            p.testimonials__text!= testimonialsText
+                        - for(var i = 0; i < 3; i++)
+                            .testimonials__item
+                                .testimonials__item-top.clearfix
+                                    span.testimonials__name!= "Имя Отчество"
+                                    span.testimonials__city!= "Город"
 
-
-            .testimonials__row-right
+                                p.testimonials__text!= testimonialsText

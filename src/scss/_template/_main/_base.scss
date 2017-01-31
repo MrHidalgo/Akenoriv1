@@ -189,6 +189,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 		line-height: 1;
 
 		padding-bottom: 30px;
+
+		@include respond-to(small-max) {
+			font-size: 20px;
+		}
 	}
 }
 
@@ -200,6 +204,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 		family: $f-PN_thin;
 	}
 	text-transform: uppercase;
+
+	@include respond-to(small-max) {
+		font-size: 18px;
+	}
 
 
 	&_bold {
@@ -298,6 +306,8 @@ $f-PN_black         : return-value(fonts, PN_black);
 		&-header {
 			position: relative;
 
+			height: 65px;
+
 			margin-bottom: 40px;
 		}
 
@@ -345,6 +355,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 		margin-bottom: 30px;
 
+		@include respond-to(small-max) {
+			max-width: 100%;
+		}
+
 
 		&-left {
 			width: 11px;
@@ -359,6 +373,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 			padding: {
 				left: 10px;
 				right: 10px;
+			}
+
+			@include respond-to(small-max) {
+				font-size: 14px;
 			}
 		}
 
@@ -426,6 +444,14 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 /* BLOCK LEFT/RIGHT */
 .block {
+
+	@include respond-to(large-max) {
+		padding: {
+			left: 15px;
+			right: 15px;
+		};
+	}
+
 	&_left {
 		.block__left {
 			float: left;
@@ -450,6 +476,15 @@ $f-PN_black         : return-value(fonts, PN_black);
 		@include respond-to(large-max) {
 			width: $w-all;
 		}
+		@include respond-to(medium) {
+			height: 405px;
+		}
+		@include respond-to(small) {
+			height: 340px;
+		}
+		@include respond-to(extra-small) {
+			height: 170px;
+		}
 	}
 }
 
@@ -463,6 +498,31 @@ $f-PN_black         : return-value(fonts, PN_black);
 	align-items: center;
 
 	@include mixinDimensions(1070px, calc(100% - 160px));
+
+	@include respond-to(large) {
+		width: 970px;
+	}
+	@include respond-to(medium-max) {
+		position: relative;
+
+		padding: {
+			left: 15px;
+			right: 15px;
+		};
+	}
+	@include respond-to(medium) {
+		top: -15px;
+
+		width: calc(100% - 120px);
+
+		margin: {
+			left: 60px;
+			right: 60px;
+		};
+	}
+	@include respond-to(small-max) {
+		width: $w-all;
+	}
 
 
 	.right & {
@@ -490,6 +550,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 		box-shadow: 14.339px 20.479px 60px 0 rgba(18, 104, 145, 0.28);
 
+		@include respond-to(small-max) {
+			min-height: 280px;
+		}
+
 
 		.left & {
 			justify-content: flex-end;
@@ -505,6 +569,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 			width: 770px;
 
 			padding-left: 70px;
+
+			@include respond-to(small-max) {
+				padding: 15px;
+			}
 		}
 	}
 }
@@ -514,9 +582,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 .owl {
 	&-prev {
 		@include retina-sprite($sp-i-9-0-block-group);
-		//@include respond-to(medium-max) {
-		//	@include retina-sprite($sp-i-prev-mobile-group);
-		//}
+		@include respond-to(medium-max) {
+			@include retina-sprite($sp-i-prev-mobile-group);
+		}
 
 
 		&:hover,
@@ -528,9 +596,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 	}
 	&-next {
 		@include retina-sprite($sp-i-9-1-block-group);
-		//@include respond-to(medium-max) {
-		//	@include retina-sprite($sp-i-next-mobile-group);
-		//}
+		@include respond-to(medium-max) {
+			@include retina-sprite($sp-i-next-mobile-group);
+		}
 
 
 		&:hover,

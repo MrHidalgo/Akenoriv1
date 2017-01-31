@@ -38,14 +38,15 @@ section.information.clearfix
         class="information__img img_responsive"
     )
 
-    .container.clearfix
-        .information__row-left
-            p.information__title!= "Поездка</br><span class='information__title_bold'>без видеорегистратора</span>"
+    .container-fluid
+        .container.clearfix
+            .information__row-left
+                p.information__title!= "Поездка</br><span class='information__title_bold'>без видеорегистратора</span>"
 
-            +informationList(infArrLeft)
+                +informationList(infArrLeft)
 
-        .information__row-right
-            p.information__title!= "Поездка</br><span class='information__title_bold'>с AKENORI</span>"
+            .information__row-right
+                p.information__title!= "Поездка</br><span class='information__title_bold'>с AKENORI</span>"
 
-            +informationList(infArrright)
+                +informationList(infArrright)
 

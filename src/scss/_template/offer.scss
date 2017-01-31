@@ -26,11 +26,41 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 
 	background-color: $c-dodger-blue;
 
+	@include respond-to(small-max) {
+		padding: {
+			top: 40px;
+			bottom: 30px;
+		}
+	}
+
+
+	.container {
+		padding: {
+			left: 0;
+			right: 0;
+		};
+
+		@include respond-to(large-max) {
+			max-width: 100%;
+		}
+	}
+
 
 	&__eclips {
 		top: 40px;
 
 		@include mixinDimensions(673px);
+
+		@include respond-to(small) {
+			top: 20px;
+
+			@include mixinDimensions(450px);
+		}
+		@include respond-to(extra-small) {
+			top: 10px;
+
+			@include mixinDimensions(300px);
+		}
 	}
 
 
@@ -44,6 +74,10 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 			right: 15px;
 		}
 
+		@include respond-to(small-max) {
+			font-size: 18px;
+		}
+
 
 		&-sub {
 			font: {
@@ -54,6 +88,10 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 				left: 15px;
 				right: 15px;
 				bottom: 15px;
+			}
+
+			@include respond-to(small-max) {
+				font-size: 14px;
 			}
 		}
 	}
@@ -101,12 +139,31 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		@include respond-to(large-max) {
+			flex-flow: row wrap;
+		}
+		@include respond-to(small-max) {
+			display: block;
+
+			margin-top: 30px;
+
+			height: auto;
+		}
 	}
 
 
 	&__text {
 		font-size: 25px;
 		text-transform: uppercase;
+
+		@include respond-to(large-max) {
+			width: $w-all;
+			margin-bottom: 20px;
+		}
+		@include respond-to(small-max) {
+			font-size: 18px;
+		}
 	}
 
 
@@ -114,6 +171,14 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
+
+		@include respond-to(small-max) {
+			width: $w-all;
+
+			margin-bottom: 20px;
+
+			justify-content: space-around;
+		}
 
 
 		&-num {
@@ -129,6 +194,16 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 
 			line-height: 52px;
 			font-size: 25px;
+
+			@include respond-to(small-max) {
+				font-size: 16px;
+
+				@include mixinDimensions(34px);
+
+				line-height: 32px;
+
+				margin-right: 10px;
+			}
 		}
 	}
 
@@ -137,5 +212,28 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 		margin-right: 20px;
 
 		font-size: 25px;
+
+
+		@include respond-to(medium-max) {
+			font-size: 20px;
+		}
+		@include respond-to(medium-max) {
+			font-size: 16px;
+
+			margin-right: 5px;
+		}
+	}
+
+
+	&__btn {
+		@include respond-to(small-max) {
+			display: block;
+
+			margin: {
+				left: auto;
+				right: auto;
+				bottom: 20px;
+			};
+		}
 	}
 }

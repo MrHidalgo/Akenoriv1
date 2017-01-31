@@ -29,7 +29,12 @@ task.mainImageTask(command.buildImg);
 
 
 /* WATCH FILES FOR RELOAD ---> 'gulp watch'*/
-gulp.task(command.watch, function() {
+gulp.task(command.watch,
+    [
+        command.buildScss,
+        command.buildJade,
+        command.buildScript
+    ], function() {
 
     var srcWatchSCSS = ['./src/scss/**.scss', './src/scss/**/**.scss'];
     var srcWatchJADE = ['./src/jade/**.jade', './src/jade/**/**.jade'];
@@ -39,18 +44,12 @@ gulp.task(command.watch, function() {
     var srcWatchIMG  = ['./src/image/*'];
 
 
-    watch(srcWatchSCSS, function() {
-        gulp.start(command.buildScss)
-    });
-    watch(srcWatchJADE, function() {
-        gulp.start(command.buildJade)
-    });
-    watch(srcWatchJS, function() {
-        gulp.start(command.buildScript)
-    });
-    watch(srcWatchJSON, function() {
-        gulp.start(command.buildJade)
-    });
+    gulp.watch(srcWatchSCSS,    [command.buildScss]);
+    gulp.watch(srcWatchJADE,    [command.buildJade]);
+    gulp.watch(srcWatchJS,      [command.buildScript]);
+    gulp.watch(srcWatchJSON,    [command.buildJade]);
+
+
     watch(srcWatchICON, function() {
         gulp.start(command.sprites)
     });

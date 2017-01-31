@@ -25,9 +25,57 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 
 	margin-bottom: 220px;
 
+	@include respond-to(small-max) {
+		padding-top: 200px;
+		margin-bottom: 30px;
+
+		height: auto;
+	}
+
+
+	.container {
+		padding: {
+			left: 0;
+			right: 0;
+		};
+
+		@include respond-to(large-max) {
+			max-width: 100%;
+			min-width: auto;
+		}
+	}
+
+	.row__left.row__half {
+		@include respond-to(medium-max) {
+			width: 30%;
+		}
+		@include respond-to(small-max) {
+			display: none;
+		}
+	}
+	.row__right.row__half {
+		@include respond-to(medium-max) {
+			width: 70%;
+		}
+		@include respond-to(small-max) {
+			width: 100%;
+		}
+	}
+
 
 	&__img {
 		padding-left: 120px;
+
+		@include respond-to(large-max) {
+			padding-left: 0;
+		}
+		@include respond-to(small-max) {
+			margin: {
+				top: 30px;
+				left: auto;
+				right: auto;
+			};
+		}
 	}
 
 
@@ -45,6 +93,16 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 		background-size: cover;
 
 		box-shadow: 14.339px 20.479px 60px 0 rgba(18, 104, 145, 0.28);
+
+		@include respond-to(large) {
+			width: 670px;
+		}
+		@include respond-to(medium) {
+			width: 570px;
+		}
+		@include respond-to(small-max) {
+			margin-bottom: 30px;
+		}
 	}
 
 

@@ -20,6 +20,22 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 
 	padding-top: 160px;
 
+	@include respond-to(large) {
+		padding: {
+			top: 120px;
+		};
+	}
+	@include respond-to(medium-max) {
+		padding: {
+			top: 80px;
+		};
+	}
+	@include respond-to(small-max) {
+		padding: {
+			top: 40px;
+		};
+	}
+
 
 	.block__left {
 		background-image: url("../image/img-slider.png");
@@ -30,7 +46,14 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 		padding: {
 			top: 40px;
 			left: 100px;
-		};
+		}
+
+		@include respond-to(small-max) {
+			padding: {
+				left: 15px;
+				right: 15px;
+			}
+		}
 	}
 
 
@@ -40,9 +63,17 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 			family: $f-PN_extraBold;
 		}
 
+		@include respond-to(small-max) {
+			font-size: 16px;
+		}
+
 
 		&-sub {
 			font-size: 18px;
+
+			@include respond-to(small-max) {
+				font-size: 14px;
+			}
 		}
 	}
 
@@ -70,13 +101,69 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 			top: -50px;
 		}
 
+
+		&-nav {
+			@include respond-to(medium-max) {
+				width: 100%;
+
+				left: 0;
+			}
+			@include respond-to(medium) {
+				top: 50%;
+
+				margin-top: -27px;
+			}
+			@include respond-to(small-max) {
+				top: -30px;
+			}
+		}
+
+
+		&-prev {
+			@include respond-to(medium-max) {
+				left: 15px;
+			}
+		}
+
 		&-next {
 			margin-left: 70px;
+
+			@include respond-to(medium-max) {
+				margin-left: 0;
+
+				right: 15px;
+			}
+		}
+
+
+		&-prev,
+		&-next {
+			@include respond-to(medium-max) {
+				position: absolute;
+			}
 		}
 
 
 		&-dots {
 			margin-left: 300px;
+
+			@include respond-to(medium-max) {
+				margin-left: 0;
+			}
+			@include respond-to(small-max) {
+				top: -15px;
+				left: 0;
+				right: 0;
+
+				width: calc(100% - 120px);
+
+				margin: {
+					left: auto;
+					right: auto;
+				};
+
+				text-align: center;
+			}
 		}
 
 

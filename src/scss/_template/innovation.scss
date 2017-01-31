@@ -28,7 +28,7 @@ $c-white	        : return-value(color, white);
 			bottom: 50px;
 		};
 	}
-	@include respond-to(medium-max) {
+	@include respond-to(small-max) {
 		padding: {
 			top: 40px;
 			bottom: 10px;
@@ -42,7 +42,7 @@ $c-white	        : return-value(color, white);
 		@include mixinDimensions(673px);
 
 		@include respond-to(medium) {
-			top: 40px;
+			top: 60px;
 		}
 		@include respond-to(small) {
 			top: 30px;

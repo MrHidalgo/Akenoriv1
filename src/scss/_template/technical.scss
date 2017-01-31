@@ -16,11 +16,44 @@ $c-white	        : return-value(color, white);
 	padding-top: 160px;
 	padding-bottom: 160px;
 
+	@include respond-to(large) {
+		padding: {
+			top: 120px;
+			bottom: 120px;
+		};
+	}
+	@include respond-to(medium-max) {
+		padding: {
+			top: 80px;
+			bottom: 50px;
+		};
+	}
+	@include respond-to(small-max) {
+		padding: {
+			top: 40px;
+			bottom: 10px;
+		};
+	}
+
 
 	&__eclips {
 		top: 100px;
 
 		@include mixinDimensions(673px);
+
+		@include respond-to(medium) {
+			top: 40px;
+		}
+		@include respond-to(small) {
+			top: 30px;
+
+			@include mixinDimensions(450px);
+		}
+		@include respond-to(extra-small) {
+			top: 20px;
+
+			@include mixinDimensions(300px);
+		}
 	}
 
 
@@ -39,6 +72,13 @@ $c-white	        : return-value(color, white);
 	&__list {
 		.main__item {
 			width: (100 / 4) * 1%;
+
+			@include respond-to(large-max) {
+				width: 50%;
+			}
+			@include respond-to(small-max) {
+				width: 100%;
+			}
 		}
 	}
 }

@@ -63,8 +63,9 @@ function jadeMainTask(taskName) {
             .pipe(plumber({
                 errorHandler: onError
             }))
-            // .pipe(changed('app', {hasChanged: changed.compareSha1Digest}))
-            .pipe(changedInPlace())
+            .pipe(changed('./dist/', {
+                hasChanged: changed.compareSha1Digest
+            }))
             .pipe(data(getJsonData))
             .pipe(jade(
                 {
@@ -72,12 +73,7 @@ function jadeMainTask(taskName) {
                 }
             ))
             .pipe(debug({title: 'jade:'}))
-            .pipe(gulp.dest('./dist/'))
-            // .pipe(notify(
-            //     {
-            //         message: 'JADE task complete'
-            //     }
-            // ));
+            .pipe(gulp.dest('./dist/'));
     })
 }
 
@@ -92,8 +88,9 @@ function mainScriptTask(taskName) {
             .pipe(plumber({
                 errorHandler: onError
             }))
-            // .pipe(changed('app', {hasChanged: changed.compareSha1Digest}))
-            .pipe(changedInPlace())
+            .pipe(changed(dist, {
+                hasChanged: changed.compareSha1Digest
+            }))
             .pipe(fixmyjs(
                 {
                     legacy : true
@@ -117,12 +114,7 @@ function mainScriptTask(taskName) {
             .pipe(debug({title: 'rename:'}))
             .pipe(
                 gulp.dest(dist)
-            )
-            // .pipe(notify(
-            //     {
-            //         message: 'SCRIPT task complete'
-            //     }
-            // ));
+            );
     });
 }
 
@@ -161,8 +153,9 @@ function styleMainTask(taskName) {
             .pipe(plumber({
                 errorHandler: onError
             }))
-            // .pipe(changed('app', {hasChanged: changed.compareSha1Digest}))
-            .pipe(changedInPlace())
+            .pipe(changed(dest, {
+                hasChanged: changed.compareSha1Digest
+            }))
             .pipe(sourcemaps.init(
                 {
                     loadMaps: true
@@ -200,12 +193,7 @@ function styleMainTask(taskName) {
             .pipe(debug({title: 'rename:'}))
             .pipe(
                 gulp.dest(dest)
-            )
-            // .pipe(notify(
-            //     {
-            //         message: 'STYLE task complete'
-            //     }
-            // ));
+            );
 	});
 }
 
@@ -267,22 +255,11 @@ function mainImageTask(taskName) {
             .pipe(plumber({
                 errorHandler: onError
             }))
-            // .pipe(changed('app', {hasChanged: changed.compareSha1Digest}))
-            // .pipe(changedInPlace())
             .pipe(imagemin('w2hECd9nCvKWfBj49LZrOPa6Ws7ws8uE'))
             .pipe(debug({title: 'imagemin:'}))
             .pipe(
                 gulp.dest(dest)
-            )
-            // .on("end", function() {
-            //     del.sync(src);
-            // })
-            // .pipe(debug({title: 'del:'}))
-            // .pipe(notify(
-            //     {
-            //         message: 'IMG task complete'
-            //     }
-            // ))
+            );
     });
 }
 

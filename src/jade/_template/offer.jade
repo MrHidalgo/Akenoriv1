@@ -28,25 +28,26 @@ section.offer
 
     p.offer__price!= "15 000"
 
-    .container
-        .offer__row
+    .container-fluid
+        .container
+            .offer__row
 
-            p.offer__text!= "До конца акции осталось"
+                p.offer__text!= "До конца акции осталось"
 
-            .offer__wrap
-                .offer__wrap-day.offer__circle
-                    span.offer__wrap-num!= "10"
-                    | дней
-                .offer__wrap-hours.offer__circle
-                    span.offer__wrap-num!= "10"
-                    | часов
-                .offer__wrap-minute.offer__circle
-                    span.offer__wrap-num!= "10"
-                    | минут
+                .offer__wrap
+                    .offer__wrap-day.offer__circle
+                        span.offer__wrap-num!= "10"
+                        | дней
+                    .offer__wrap-hours.offer__circle
+                        span.offer__wrap-num!= "10"
+                        | часов
+                    .offer__wrap-minute.offer__circle
+                        span.offer__wrap-num!= "10"
+                        | минут
 
-            a(
-                href="javascript:void(0);"
-                title=""
-                class="btn btn_white"
-            )!= "Купить"
+                a(
+                    href="javascript:void(0);"
+                    title=""
+                    class="btn btn_white offer__btn"
+                )!= "Купить"
 
