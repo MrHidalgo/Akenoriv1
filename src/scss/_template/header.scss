@@ -3,6 +3,7 @@
 @import "../_variable/sprite_AKENORI1";
 
 @import "./_macros/header__fixed";
+@import "./_macros/nav";
 ///
 /// DECLARATION VARIABLE
 ///
@@ -109,7 +110,7 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 		color: $c-white;
 		text-transform: uppercase;
 
-		margin-bottom: 60px;
+		margin-bottom: 50px;
 
 		@include respond-to(large) {
 			font-size: 33px;

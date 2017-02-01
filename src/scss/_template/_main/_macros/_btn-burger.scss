@@ -20,7 +20,7 @@ $c-white			      : return-value(color, white);
 
 	&.active {
 		.btn-menu__line {
-			width: 32px;
+			width: 32px !important;
 
 
 			&-0,
@@ -68,7 +68,7 @@ $c-white			      : return-value(color, white);
 	}
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1025px){
 	.btn-menu {
 		&:hover {
 			.btn-menu__line {

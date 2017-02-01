@@ -871,18 +871,6 @@ body.open-menu, body.open-popup {
   overflow: hidden;
 }
 
-
-body.fixed {
-  padding-top: 140px;
-}
-
-@media screen and (max-width: 1366px) {
-  
-  body.fixed {
-    padding-top: 100px;
-  }
-}
-
 @media only screen and (max-width: 1024px) {
   
   body.open-menu {
@@ -1141,7 +1129,7 @@ input[type="radio"] {
 
 
 .btn-menu.active .btn-menu__line {
-  width: 32px;
+  width: 32px !important;
 }
 
 
@@ -1197,7 +1185,7 @@ input[type="radio"] {
   bottom: 0;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   
   .btn-menu:hover .btn-menu__line {
     width: 23px;
@@ -1225,9 +1213,114 @@ input[type="radio"] {
 }
 
 
+.fixed .header__fixed {
+  position: fixed;
+  z-index: 100;
+  background-color: #232323;
+}
+
+
 .header__fixed-social {
   float: right;
   margin-top: 30.5px;
+}
+
+
+.nav {
+  display: none;
+  position: fixed;
+  z-index: 101;
+  top: 85px;
+  left: 0;
+  padding-top: 100px;
+  background-color: #272727;
+  width: 100%;
+  height: -webkit-calc(100% - 85px);
+  height: calc(100% - 85px);
+}
+
+@media screen and (max-width: 1366px) {
+  
+  .nav {
+    top: 100px;
+    padding-top: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  
+  .open-menu .nav {
+    overflow-y: auto;
+  }
+}
+
+
+.nav__list {
+  width: 740px;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+@media screen and (max-width: 767px) {
+  
+  .nav__list {
+    width: 100%;
+  }
+}
+
+
+.nav__item {
+  width: 50%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  
+  .nav__item {
+    width: 100%;
+  }
+}
+
+
+.nav__btn {
+  display: block;
+  font-size: 22px;
+  font-family: "Proxima Nova Bold";
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+
+.nav__btn:before {
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: -100px;
+  width: 100px;
+  height: 1px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+
+.nav__btn:hover {
+  color: #0b8aff;
 }
 
 
@@ -1336,7 +1429,7 @@ input[type="radio"] {
   font-family: "Proxima Nova Thin";
   color: #fff;
   text-transform: uppercase;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {

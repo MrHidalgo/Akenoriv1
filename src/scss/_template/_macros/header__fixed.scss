@@ -9,6 +9,7 @@
 $w-all              : return-value(dimension, all);
 
 $c-white			      : return-value(color, white);
+$c-nero 			      : return-value(color, nero);
 ///
 /// MAIN
 ///
@@ -21,6 +22,14 @@ $c-white			      : return-value(color, white);
 	@include mixinDimensions($w-all, 85px);
 
 	text-align: center;
+
+
+	.fixed & {
+		position: fixed;
+		z-index: 100;
+
+		background-color: $c-nero;
+	}
 
 
 	&-social {

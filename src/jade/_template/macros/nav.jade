@@ -1,0 +1,33 @@
+-
+    var navLink = [
+        "Lorem Ipsum",
+        "Lorem Ipsum",
+        "Lorem Ipsum",
+        "Lorem Ipsum",
+        "Lorem Ipsum",
+        "Lorem Ipsum",
+        "Lorem Ipsum",
+        "Lorem Ipsum"
+    ];
+    var navLinkHref = [
+        "#",
+        "#",
+        "#",
+        "#",
+        "#",
+        "#",
+        "#",
+        "#"
+    ];
+
+
+nav.nav
+    .container-fluid
+        ul.nav__list
+            -for(var i = 0; i < navLink.length; i++)
+                li.nav__item
+                    a(
+                        href= navLinkHref[i]
+                        title=""
+                        class="nav__btn"
+                    )!= navLink[i]

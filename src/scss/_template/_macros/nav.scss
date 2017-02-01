@@ -1,0 +1,103 @@
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white            : return-value(color, white);
+$c-neroLight        : return-value(color, neroLight);
+$c-dodger-blue      : return-value(color, dodger-blue);
+
+$f-PN_bold          : return-value(fonts, PN_bold);
+///
+/// MAIN
+///
+.nav {
+	display: none;
+	position: fixed;
+	z-index: 101;
+	top: 85px;
+	left: 0;
+	padding-top: 100px;
+	background-color: $c-neroLight;
+	width: $w-all;
+	height: calc(100% - 85px);
+	@include respond-to(hard-max) {
+		top: 100px;
+		padding-top: 40px;
+	}
+
+	.open-menu & {
+		@include respond-to(small-max) {
+			overflow-y: auto;
+		}
+	}
+
+
+	&__list {
+		width: 740px;
+		margin-left: auto;
+		margin-right: auto;
+
+		display: flex;
+		flex-flow: row wrap;
+		@include respond-to(small-max) {
+			width: $w-all;
+		}
+	}
+
+
+	&__item {
+		width: 50%;
+		overflow: hidden;
+		@include respond-to(small-max) {
+			width: 100%;
+		}
+	}
+
+
+	&__btn {
+		display: block;
+		font: {
+			size: 22px;
+			family: $f-PN_bold;
+		}
+		color: $c-white;
+		text-transform: uppercase;
+		position: relative;
+		height: 50px;
+		line-height: 50px;
+		margin-bottom: 20px;
+		overflow: hidden;
+		transition: all .3s ease-in-out;
+
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 23px;
+			left: -100px;
+			@include mixinDimensions(100px, 1px);
+			//background-color: $c-pinkSwan;
+			transition: all .3s ease-in-out;
+		}
+
+
+		&:hover {
+			color: $c-dodger-blue;
+
+			//@include respond-to(small-min) {
+			//	padding-left: 110px;
+			//	transition: all .3s ease-in-out;
+			//}
+			//
+			//
+			//&:before {
+			//	@include respond-to(small-min) {
+			//		left: 0;
+			//	}
+			//}
+		}
+	}
+}

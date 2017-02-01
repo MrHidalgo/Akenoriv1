@@ -36,7 +36,7 @@ gulp.task(command.watch,
         command.buildScript
     ], function() {
 
-    var srcWatchSCSS = ['./src/scss/**.scss', './src/scss/**/**.scss'];
+    var srcWatchSCSS = ['./src/scss/**.scss', './src/scss/**/**.scss', './src/scss/**/**/**.scss'];
     var srcWatchJADE = ['./src/jade/**.jade', './src/jade/**/**.jade'];
     var srcWatchJSON = ['./src/_data/*.json'];
     var srcWatchJS   = ['./src/js/**.js'];

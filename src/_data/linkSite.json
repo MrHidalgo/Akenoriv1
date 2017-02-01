@@ -2,12 +2,14 @@
   "styleLink" : [
     "./css/fonts.min.css",
     "./css/owl.carousel.min.css",
+    "./css/animate.min.css",
     "./css/common.min.css"
   ],
 
   "scriptLink" : [
     "./script/jquery-1.11.1.min.js",
     "./script/owl.carousel.min.js",
+    "./script/jquery.viewportchecker.min.js",
     "./script/main.min.js"
   ]
 }

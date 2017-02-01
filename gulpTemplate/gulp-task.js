@@ -88,9 +88,9 @@ function mainScriptTask(taskName) {
             .pipe(plumber({
                 errorHandler: onError
             }))
-            .pipe(changed(dist, {
-                hasChanged: changed.compareSha1Digest
-            }))
+            // .pipe(changed(dist, {
+            //     hasChanged: changed.compareSha1Digest
+            // }))
             .pipe(fixmyjs(
                 {
                     legacy : true
