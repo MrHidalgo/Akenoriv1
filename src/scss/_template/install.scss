@@ -46,7 +46,7 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 		flex-flow: row wrap;
 
 		@include respond-to(small-max) {
-			min-height: 120px;
+			min-height: 140px;
 		}
 	}
 
@@ -87,5 +87,12 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 	&__android,
 	&__apple {
 		display: inline-block;
+
+
+		&:hover {
+			opacity: .8;
+
+			transition: all .3s ease-in-out;
+		}
 	}
 }

@@ -31,7 +31,6 @@ $c-dim-gray       : return-value(color, dim-gray);
 	@include respond-to(small-max) {
 		padding: {
 			top: 40px;
-			bottom: 10px;
 		};
 	}
 

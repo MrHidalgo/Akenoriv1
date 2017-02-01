@@ -7,6 +7,7 @@ $w-all            : return-value(dimension, all);
 
 $c-white	        : return-value(color, white);
 $c-dodger-blue    : return-value(color, dodger-blue);
+$c-nero           : return-value(color, nero);
 
 $f-PN_light        : return-value(fonts, PN_light);
 $f-PN_extraBold   : return-value(fonts, PN_extraBold);
@@ -18,6 +19,15 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 
 	height: 765px;
 
+	@include respond-to(small-max) {
+		height: auto;
+
+		padding: {
+			left: 15px;
+			right: 15px;
+		};
+	}
+
 
 	.container {
 		padding: {
@@ -28,6 +38,16 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 		@include respond-to(large-max) {
 			max-width: 100%;
 		}
+
+
+		&-fluid {
+			@include respond-to(small-max) {
+				padding: {
+					left: 0;
+					right: 0;
+				};
+			}
+		}
 	}
 
 
@@ -36,6 +56,13 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 
 		background-image: url("../image/img-information-left.png");
 		background-position: left;
+
+
+		.information__img-mobile {
+			@include respond-to(small-max) {
+				right: 0;
+			}
+		}
 	}
 
 
@@ -44,11 +71,38 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 
 		background-image: url("../image/img-information-right.png");
 		background-position: right;
+
+		@include respond-to(small-max) {
+			display: none;
+		}
+
+
+		&_hide {
+			display: none;
+
+			right: 0;
+
+			background-image: url("../image/img-information-right.png");
+			background-position: right;
+
+
+			@include respond-to(small-max) {
+				display: block;
+			}
+		}
+
+
+		.information__img-mobile {
+			@include respond-to(small-max) {
+				left: 0;
+			}
+		}
 	}
 
 
 	&__left,
-	&__right {
+	&__right,
+	&__right_hide {
 		position: absolute;
 		top: 0;
 
@@ -57,7 +111,14 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 		background-repeat: no-repeat;
 		background-size: cover;
 
-		@include respond-to(medium-max) {}
+		@include respond-to(small-max) {
+			position: relative;
+
+			@include mixinDimensions($w-all, 350px);
+		}
+		@include respond-to(extra-small) {
+			height: 170px;
+		}
 	}
 
 
@@ -80,6 +141,10 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 			style: dashed;
 			color: $c-dodger-blue;
 			radius: $w-all;
+		}
+
+		@include respond-to(small-max) {
+			display: none;
 		}
 
 
@@ -108,12 +173,30 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		right: 20px;
+		right: 0;
 
 		margin: {
 			left: auto;
 			right: auto;
 		};
+
+		@include respond-to(small-max) {
+			display: none;
+		}
+
+
+		&-mobile {
+			display: none;
+
+			@include respond-to(small-max) {
+				display: block;
+				position: absolute;
+
+				bottom: 0;
+
+				width: 70%;
+			}
+		}
 	}
 
 
@@ -146,6 +229,18 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 		@include respond-to(medium-max) {
 			padding-top: 30px;
 		}
+		@include respond-to(small-max) {
+			float: none;
+
+			width: $w-all;
+
+			padding: {
+				right: 0;
+				left: 0;
+				top: 30px;
+				bottom: 30px;
+			}
+		}
 	}
 
 
@@ -158,6 +253,13 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 		text-transform: uppercase;
 
 		margin-bottom: 69px;
+
+		@include respond-to(small-max) {
+			font-size: 20px;
+			color: $c-nero;
+
+			margin-bottom: 30px;
+		}
 
 
 		&_bold {
@@ -180,6 +282,11 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 
 		margin-bottom: 30px;
 
+		@include respond-to(small-max) {
+			font-size: 14px;
+			color: $c-nero;
+		}
+
 
 		&-left {
 			min-width: 30px;
@@ -199,6 +306,10 @@ $f-PN_extraBold   : return-value(fonts, PN_extraBold);
 			style: solid;
 			color: $c-white;
 			radius: $w-all;
+		}
+
+		@include respond-to(small-max) {
+			border-color: $c-dodger-blue;
 		}
 	}
 }

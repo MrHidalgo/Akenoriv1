@@ -570,6 +570,12 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 			padding-left: 70px;
 
+			@include respond-to(medium) {
+				padding: {
+					top: 15px;
+					bottom: 15px;
+				};
+			}
 			@include respond-to(small-max) {
 				padding: 15px;
 			}
@@ -589,9 +595,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 		&:hover,
 		&:active {
-			//@include respond-to(extra-large) {
-			//	@include retina-sprite($sp-i-prev-h-group);
-			//}
+			@include respond-to(extra-large) {
+				@include retina-sprite($sp-i-prev-h-group);
+			}
 		}
 	}
 	&-next {
@@ -603,9 +609,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 		&:hover,
 		&:active {
-			//@include respond-to(extra-large) {
-			//	@include retina-sprite($sp-i-next-h-group);
-			//}
+			@include respond-to(extra-large) {
+				@include retina-sprite($sp-i-next-h-group);
+			}
 		}
 	}
 	&-prev,

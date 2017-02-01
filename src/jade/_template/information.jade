@@ -27,7 +27,20 @@ mixin informationList(arrText)
 
 section.information.clearfix
     .information__left
+        img(
+            src="./image/img-information-car-left.png"
+            title=""
+            alt=""
+            class="information__img-mobile img_responsive"
+        )
     .information__right
+        img(
+            src="./image/img-information-car-right.png"
+            title=""
+            alt=""
+            class="information__img-mobile img_responsive"
+        )
+
     .information__bottom
         .information__bottom-internal
 
@@ -44,6 +57,14 @@ section.information.clearfix
                 p.information__title!= "Поездка</br><span class='information__title_bold'>без видеорегистратора</span>"
 
                 +informationList(infArrLeft)
+
+            .information__right_hide
+                img(
+                    src="./image/img-information-car-right.png"
+                    title=""
+                    alt=""
+                    class="information__img-mobile img_responsive"
+                )
 
             .information__row-right
                 p.information__title!= "Поездка</br><span class='information__title_bold'>с AKENORI</span>"

@@ -16,6 +16,10 @@ $c-white	        : return-value(color, white);
 	padding-top: 60px;
 	padding-bottom: 160px;
 
+	@include respond-to(medium-max) {
+		padding-bottom: 60px;
+	}
+
 
 	&__eclips {
 		top: 0;

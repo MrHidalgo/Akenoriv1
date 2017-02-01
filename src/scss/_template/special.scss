@@ -31,6 +31,10 @@ $c-white	        : return-value(color, white);
 
 		&.block__ellipse {
 			z-index: 11;
+
+			@include respond-to(small-max) {
+				display: none;
+			}
 		}
 
 
@@ -64,7 +68,7 @@ $c-white	        : return-value(color, white);
 			height: 625px;
 		}
 		@include respond-to(extra-small) {
-
+			height: 420px;
 		}
 
 
@@ -93,7 +97,7 @@ $c-white	        : return-value(color, white);
 			bottom: 116px;
 
 			@include respond-to(small-max) {
-				bottom: 20px;
+				bottom: 50px;
 			}
 		}
 
@@ -103,7 +107,7 @@ $c-white	        : return-value(color, white);
 			bottom: 119px;
 
 			@include respond-to(small-max) {
-				bottom: 23px;
+				bottom: 52px;
 			}
 		}
 
