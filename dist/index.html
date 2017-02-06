@@ -12,7 +12,7 @@
     <link href="./css/common.min.css" rel="stylesheet"/>
   </head>
   <body>
-    <header class="header"><img src="./image/img-header-register.png" title="Akenori device" alt="Akenori device" class="header__img img_responsive">
+    <header class="header"><img src="./image/header/img-header-shadow.png" title="Akenori device" alt="Akenori device" class="img_responsive header__img header__img-shadow"><img src="./image/header/img-header-register.png" title="Akenori device" alt="Akenori device" class="img_responsive header__img header__img-register">
       <section class="header__fixed animated clearfix">
         <div class="container-fluid"><a href="javascript:void(0);" title="" class="btn-menu btn-menu_js"><span class="btn-menu__line btn-menu__line-0"></span><span class="btn-menu__line btn-menu__line-1"></span><span class="btn-menu__line btn-menu__line-2"></span></a>
           <div class="logotype"><img src="./image/img-logotype.png" title="logotype" alt="logotype" class="logotype__img"></div>
@@ -23,14 +23,12 @@
       <nav class="nav">
         <div class="container-fluid">
           <ul class="nav__list">
-            <li class="nav__item"><a href="#" title="" class="nav__btn">Lorem Ipsum</a></li>
-            <li class="nav__item"><a href="#" title="" class="nav__btn">Lorem Ipsum</a></li>
-            <li class="nav__item"><a href="#" title="" class="nav__btn">Lorem Ipsum</a></li>
-            <li class="nav__item"><a href="#" title="" class="nav__btn">Lorem Ipsum</a></li>
-            <li class="nav__item"><a href="#" title="" class="nav__btn">Lorem Ipsum</a></li>
-            <li class="nav__item"><a href="#" title="" class="nav__btn">Lorem Ipsum</a></li>
-            <li class="nav__item"><a href="#" title="" class="nav__btn">Lorem Ipsum</a></li>
-            <li class="nav__item"><a href="#" title="" class="nav__btn">Lorem Ipsum</a></li>
+            <li class="nav__item"><a href="#top" title="" class="nav__btn">Главная</a></li>
+            <li class="nav__item"><a href="#difference" title="" class="nav__btn">Об устройстве</a></li>
+            <li class="nav__item"><a href="#technical" title="" class="nav__btn">Технические особенности</a></li>
+            <li class="nav__item"><a href="#delivery" title="" class="nav__btn">Доставка и оплата</a></li>
+            <li class="nav__item"><a href="#" title="" class="nav__btn">Контакты</a></li>
+            <li class="nav__item"><a href="#" title="" class="nav__btn">Технические поддержка</a></li>
           </ul>
         </div>
       </nav>
@@ -40,9 +38,10 @@
             <h1 class="header__title">Первый видеорегистратор,</br><span class='header__title_bold'>созданный специально</span></br>для внедорожников и кроссоверов</h1><a href="javascript:void(0);" title="btn buy" class="btn btn-buy btn_white-arr">Купить</a>
           </div>
         </div>
-      </div><a href="javascript:void(0);" title="scroll down" class="btn-arrow"></a>
+      </div>
+      <div class="header__arrow"><a href="#difference" title="scroll down" class="btn-arrow"></a></div>
     </header>
-    <section class="difference">
+    <section id="difference" class="difference">
           <p class="main__title">Этот девайс <span class='main__title_bold'>отличается от всех</span></br>видеорегистраторов что вы видели раньше</p>
       <div class="difference__eclips block__ellipse"><img src="./image/img-diff-text.png" alt="nx1" title="nx1" class="img_responsive block__ellipse-img"></div><img src="./image/img-diff-register.png" alt="Akenori device" title="Akenori device" class="img_responsive difference__img">
       <div class="container">
@@ -127,17 +126,17 @@
       <div class="container-fluid clearfix">
         <div class="container">
           <div class="quality__row clearfix">
-            <div class="quality__left"></div>
+            <div class="quality__left"><a href="javascript:void(0);" title="" class="quality__left-btn quality__night-js"></a></div>
             <p class="quality__text quality__text_left quality__text_hide">Качественная съемка и полная</br>видимость на дороге ночью</p>
-            <div class="quality__right"></div>
+            <div class="quality__right"><a href="javascript:void(0);" title="" class="quality__right-btn quality__day-js"></a></div>
           </div>
+          <p class="quality__text quality__text_left">Качественная съемка и полная</br>видимость на дороге ночью</p>
+          <p class="quality__text quality__text_right">Четкая картинка, без бликов</br>и засвечиваний днем</p>
         </div>
-        <p class="quality__text quality__text_left">Качественная съемка и полная</br>видимость на дороге ночью</p>
-        <p class="quality__text quality__text_right">Четкая картинка, без бликов</br>и засвечиваний днем</p>
       </div>
     </section>
     <section class="phone">
-          <p class="main__title">Akenori – первый видеорегистратор, которым</br>вы можете<span class='main__title_bold'>управлять с iPhone или Android смартфона.</span></p>
+          <p class="main__title">Akenori – первый видеорегистратор, которым</br>вы можете<span class='main__title_bold'> управлять с iPhone или Android смартфона.</span></p>
       <div class="phone__eclips block__ellipse"></div><img src="./image/img-phone.png" title="phone" alt="phone" class="img_responsive phone__img">
       <div class="container">
             <ul class="main__list phone__list">
@@ -275,7 +274,7 @@
         </div>
       </div>
     </section>
-    <section class="technical">
+    <section id="technical" class="technical">
           <p class="main__title"><span class='main__title_bold'>Технические особенности</span> AKENORI</p>
       <div class="technical__eclips block__ellipse"><img src="./image/img-diff-text.png" alt="nx1" title="nx1" class="img_responsive block__ellipse-img"></div><img src="./image/img-technical-device.png" alt="Akenori device" title="Akenori device" class="img_responsive technical__img">
       <div class="container">
@@ -364,12 +363,40 @@
     </section>
     <section class="device">
       <div class="container">
-        <div class="device__btn-wrap"><a href="javascript:void(0);" title="" class="device__btn active">Устройство</a><a href="javascript:void(0);" title="" class="device__btn">Комплектация</a></div>
-        <div class="owl-carousel device__carousel">
-          <div class="device__item"><img src="./image/img-device-carousel.png" alt="" title="" class="device__img"></div>
-          <div class="device__item"><img src="./image/img-device-carousel.png" alt="" title="" class="device__img"></div>
-          <div class="device__item"><img src="./image/img-device-carousel.png" alt="" title="" class="device__img"></div>
-          <div class="device__item"><img src="./image/img-device-carousel.png" alt="" title="" class="device__img"></div>
+        <div class="device__btn-wrap"><a href="javascript:void(0);" title="" data-more="device" class="device__btn active">Устройство</a><a href="javascript:void(0);" title="" data-more="kit" class="device__btn">Комплектация</a></div>
+        <div class="owl-carousel device__carousel device__carousel-device">
+          <div class="device__item device__item-0"><img src="./image/device/img-device-0.png" alt="" title="" class="img_responsive"><img src="./image/device/img-device-0-line-0.png" alt="" title="" class="img_responsive device__item-line device__item-line-0"><img src="./image/device/img-device-0-line-1.png" alt="" title="" class="img_responsive device__item-line device__item-line-1"><img src="./image/device/img-device-0-line-2.png" alt="" title="" class="img_responsive device__item-line device__item-line-2"><img src="./image/device/img-device-0-line-3.png" alt="" title="" class="img_responsive device__item-line device__item-line-3">
+            <p class="device__item-text device__item-text-0">ON/OFF</p>
+            <p class="device__item-text device__item-text-1">Indicator led</p>
+            <p class="device__item-text device__item-text-2">WI-FI ON/OFF</p>
+            <p class="device__item-text device__item-text-3">Emergency video save</p>
+          </div>
+          <div class="device__item device__item-1"><img src="./image/device/img-device-1.png" alt="" title="" class="img_responsive"><img src="./image/device/img-device-1-line-0.png" alt="" title="" class="img_responsive device__item-line device__item-line-0"><img src="./image/device/img-device-1-line-1.png" alt="" title="" class="img_responsive device__item-line device__item-line-1"><img src="./image/device/img-device-1-line-2.png" alt="" title="" class="img_responsive device__item-line device__item-line-2">
+            <p class="device__item-text device__item-text-0">HDMI slot</p>
+            <p class="device__item-text device__item-text-1">SD card slot</p>
+            <p class="device__item-text device__item-text-2">Reset button</p>
+          </div>
+          <div class="device__item device__item-2"><img src="./image/device/img-device-2.png" alt="" title="" class="img_responsive"><img src="./image/device/img-device-2-line-0.png" alt="" title="" class="img_responsive device__item-line device__item-line-0">
+            <p class="device__item-text device__item-text-0">Динамик</p>
+          </div>
+          <div class="device__item device__item-3"><img src="./image/device/img-device-3.png" alt="" title="" class="img_responsive"><img src="./image/device/img-device-3-line-0.png" alt="" title="" class="img_responsive device__item-line device__item-line-0">
+            <p class="device__item-text device__item-text-0">Power mini USB</p>
+          </div>
+        </div>
+        <div style="opacity:0; height: 0; visibility:hidden;" class="owl-carousel device__carousel device__carousel-kit">
+          <div class="device__item device__item-0"><img src="./image/kit/img-complect-0.png" alt="" title="" class="img_responsive"></div>
+          <div class="device__item device__item-1"><img src="./image/kit/img-complect-1.png" alt="" title="" class="img_responsive"><img src="./image/kit/img-complect-1-line-0.png" alt="" title="" class="img_responsive device__item-line device__item-line-0">
+            <p class="device__item-text device__item-text-0">Блок зарядки</p>
+          </div>
+          <div class="device__item device__item-2"><img src="./image/kit/img-complect-2.png" alt="" title="" class="img_responsive"><img src="./image/kit/img-complect-2-line-0.png" alt="" title="" class="img_responsive device__item-line device__item-line-0">
+            <p class="device__item-text device__item-text-0">USB шнур</p>
+          </div>
+          <div class="device__item device__item-3"><img src="./image/kit/img-complect-3.png" alt="" title="" class="img_responsive"><img src="./image/kit/img-complect-3-line-0.png" alt="" title="" class="img_responsive device__item-line device__item-line-0">
+            <p class="device__item-text device__item-text-0">Крепление</br>к лобовому стеклу</p>
+          </div>
+          <div class="device__item device__item-4"><img src="./image/kit/img-complect-4.png" alt="" title="" class="img_responsive"><img src="./image/kit/img-complect-4-line-0.png" alt="" title="" class="img_responsive device__item-line device__item-line-0">
+            <p class="device__item-text device__item-text-0">Power mini USB</p>
+          </div>
         </div>
       </div>
     </section>
@@ -451,7 +478,7 @@
     </section>
     <section class="testimonials">
       <div class="testimonials__eclips block__ellipse"></div>
-          <p class="main__title"><span class='main__title_bold'>Отзывы</span> покупателей</p>
+          <p class="main__title"><span class='main__title_bold'>обзоры</span> сми</p>
       <div class="container-fluid">
         <div class="container">
           <div class="testimonials__row clearfix">
@@ -476,7 +503,7 @@
         </div>
       </div>
     </section>
-    <section class="delivery">
+    <section id="delivery" class="delivery">
       <div class="row">
         <div class="row__left row__half"></div>
         <div class="row__right row__half"><img src="./image/img-delivery.png" title="delivery" alt="delivery" class="img_responsive delivery__img"></div>
@@ -508,6 +535,16 @@
             </div>
       </div>
     </footer>
+    <div class="modal modal_day">
+      <div class="modal__container"><a href="javascript:void(0);" title="" class="modal__btn btn-close"></a>
+        <iframe src="https://www.youtube.com/embed/m5XozId5sPA" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="modal modal_night">
+      <div class="modal__container"><a href="javascript:void(0);" title="" class="modal__btn btn-close"></a>
+        <iframe src="https://www.youtube.com/embed/3pHDqucH-Ys" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
     <script src="./script/jquery-1.11.1.min.js"></script>
     <script src="./script/owl.carousel.min.js"></script>
     <script src="./script/jquery.viewportchecker.min.js"></script>

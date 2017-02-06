@@ -8,6 +8,7 @@ $w-all            : return-value(dimension, all);
 $c-white	        : return-value(color, white);
 $c-dodger-blue    : return-value(color, dodger-blue);
 $c-pinkSwan       : return-value(color, pinkSwan);
+$c-nero           : return-value(color, nero);
 
 $f-PN_bold        : return-value(fonts, PN_bold);
 ///
@@ -91,6 +92,185 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 		@include respond-to(small-max) {
 			margin-top: 60px;
 		}
+
+
+		&-device {
+			.device {
+				&__item {
+					&-0 {
+						max-width: 617px;
+
+
+						.device__item-text {
+							&-0 {
+								top: 30px;
+								left: 10px;
+								@include respond-to(small-max) {
+									top: 0;
+									left: 0;
+								}
+							}
+							&-1 {
+								top: 40px;
+								right: -10px;
+								@include respond-to(medium-max) {
+									right: 0;
+								}
+								@include respond-to(small-max) {
+									top: 0;
+									right: 0;
+								}
+							}
+							&-2 {
+								bottom: 130px;
+								left: -70px;
+								@include respond-to(medium-max) {
+									bottom: 0;
+									left: 0;
+								}
+							}
+							&-3 {
+								bottom: 80px;
+								right: -150px;
+								@include respond-to(medium-max) {
+									bottom: 0;
+									right: 0;
+								}
+							}
+						}
+					}
+					&-1 {
+						max-width: 759px;
+
+
+						.device__item-text {
+							&-0 {
+								bottom: 80px;
+								left: -50px;
+								@include respond-to(medium-max) {
+									left: 0;
+									bottom: 100px;
+								}
+								@include respond-to(small-max) {
+									bottom: 0;
+									left: 0;
+								}
+							}
+							&-1 {
+								top: 0;
+								right: 0;
+							}
+							&-2 {
+								bottom: 80px;
+								right: -50px;
+								@include respond-to(medium-max) {
+									right: 0;
+									bottom: 120px;
+								}
+								@include respond-to(small-max) {
+									right: 0;
+									bottom: 0;
+								}
+							}
+						}
+					}
+					&-2 {
+						max-width: 690px;
+
+
+						.device__item-text {
+							&-0 {
+								bottom: 200px;
+								left: 0;
+								@include respond-to(small-max) {
+									top: 0;
+									bottom: auto;
+								}
+							}
+						}
+					}
+					&-3 {
+						max-width: 726px;
+
+
+						.device__item-text {
+							&-0 {
+								bottom: 180px;
+								left: -30px;
+								@include respond-to(medium-max) {
+									left: 0;
+									bottom: 200px;
+								}
+								@include respond-to(small-max) {
+									left: 0;
+									top: 0;
+									bottom: auto;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+		&-kit {
+			margin-top: 0;
+
+
+			.device {
+				&__item {
+					&-0 {
+						max-width: 784px;
+					}
+					&-1 {
+						max-width: 225px;
+
+
+						.device__item-text {
+							&-0 {
+								top: 0;
+								left: 40px;
+							}
+						}
+					}
+					&-2 {
+						max-width: 396px;
+
+
+						.device__item-text {
+							&-0 {
+								bottom: 0;
+								left: 0;
+							}
+						}
+					}
+					&-3 {
+						max-width: 300px;
+
+
+						.device__item-text {
+							&-0 {
+								top: 0;
+								left: 20px;
+								text-align: left;
+							}
+						}
+					}
+					&-4 {
+						max-width: 289px;
+
+
+						.device__item-text {
+							&-0 {
+								top: 40px;
+								right: 0;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 
 
@@ -102,6 +282,57 @@ $f-PN_bold        : return-value(fonts, PN_bold);
 	&__img {
 		display: inline-block !important;
 		max-width: 100%;
+	}
+
+
+	&__item {
+		position: relative;
+		text-align: center;
+		margin: {
+			left: auto;
+			right: auto;
+		};
+		@include respond-to(small-max) {
+			padding-bottom: 15px;
+		}
+
+
+		&-line {
+			top: 0;
+			opacity: 0;
+
+			.active & {
+				transition: all .6s ease-in-out;
+				transition-delay: .2s;
+				opacity: 1;
+			}
+		}
+
+
+		&-text {
+			font: {
+				size: 18px;
+				family: $f-PN_bold;
+			}
+			color: $c-nero;
+			opacity: 0;
+			@include respond-to(small-max) {
+				font-size: 12px;
+			}
+
+
+			.active & {
+				transition: all .6s ease-in-out;
+				transition-delay: .7s;
+				opacity: 1;
+			}
+		}
+
+
+		&-line,
+		&-text {
+			position: absolute;
+		}
 	}
 }
 

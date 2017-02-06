@@ -5,11 +5,18 @@ include ../_mixin/mixin
 
 header.header
 
+
     img(
-        src="./image/img-header-register.png"
+        src="./image/header/img-header-shadow.png"
         title="Akenori device"
         alt="Akenori device"
-        class="header__img img_responsive"
+        class="img_responsive header__img header__img-shadow"
+    )
+    img(
+        src="./image/header/img-header-register.png"
+        title="Akenori device"
+        alt="Akenori device"
+        class="img_responsive header__img header__img-register"
     )
 
     include macros/header__fixed
@@ -42,8 +49,9 @@ header.header
                 )!= "Купить"
 
 
-    a(
-        href="javascript:void(0);"
-        title="scroll down"
-        class="btn-arrow"
-    )
+    .header__arrow
+        a(
+            href="#difference"
+            title="scroll down"
+            class="btn-arrow"
+        )

@@ -1,5 +1,6 @@
 @import "../_mixin/mixin";
 @import "../_function/function";
+@import "../_variable/sprite_AKENORI1";
 ///
 /// DECLARATION VARIABLE
 ///
@@ -103,6 +104,7 @@ $c-dim-gray       : return-value(color, dim-gray);
 
 	&__left,
 	&__right {
+		position: relative;
 		float: left;
 
 		@include mixinDimensions(50%, $w-all);
@@ -119,6 +121,21 @@ $c-dim-gray       : return-value(color, dim-gray);
 		}
 		@include respond-to(extra-small) {
 			height: 170px;
+		}
+
+
+		&-btn {
+			position: absolute;
+
+			bottom: 30px;
+			left: 30px;
+
+			@include retina-sprite($sp-i-play-group);
+
+
+			&:hover {
+				@include retina-sprite($sp-i-play-h-group);
+			}
 		}
 	}
 

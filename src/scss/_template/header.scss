@@ -38,6 +38,29 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 		bottom: 0;
 		left: 0;
 		z-index: 0;
+
+
+		&-shadow {
+			height: 0;
+
+
+			&.active {
+				height: auto;
+				transition: all 2s ease-in-out;
+			}
+		}
+
+
+		&-register {
+			opacity: 0;
+
+
+			&.active {
+				opacity: 1;
+				transition: all 3s ease-in-out;
+				transition-delay: 1.5s;
+			}
+		}
 	}
 
 
@@ -146,5 +169,10 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 
 	@include respond-to(small-max) {
 		display: none;
+	}
+
+
+	&.pulse {
+		-animation-iteration-count: infinite;
 	}
 }

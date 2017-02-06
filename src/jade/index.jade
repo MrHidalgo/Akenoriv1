@@ -27,6 +27,9 @@ html(lang="en")
         include _template/delivery
         include _template/footer
 
+        include _template/macros/modal__night
+        include _template/macros/modal__day
+
 
         - for(var i = 0; i < linkSite.scriptLink.length; i++)
             script(src= linkSite.scriptLink[i])
