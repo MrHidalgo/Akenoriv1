@@ -1208,6 +1208,7 @@ input[type="radio"] {
   left: 0;
   top: 0;
   z-index: 11;
+  background-color: #000;
   width: 100%;
   height: 85px;
   text-align: center;
