@@ -6,12 +6,16 @@
 ///
 $w-all              : return-value(dimension, all);
 
-$c-white			      : return-value(color, white);
+$c-white			: return-value(color, white);
+$c-dodger-blue		: return-value(color, dodger-blue);
+$c-neroLight		: return-value(color, neroLight);
+
+$f-PN_bold			: return-value(fonts, PN_bold);
 ///
 /// MAIN
 ///
 .modal {
-	display: none;
+	//display: none;
 	position: fixed;
 
 	z-index: 150;
@@ -20,10 +24,35 @@ $c-white			      : return-value(color, white);
 
 	@include mixinDimensions(100%);
 
-	background-color: rgba(0,0,0,.80);
-
 	@include respond-to(small-max) {
 		overflow-y: auto;
+	}
+
+	&_video {
+		background-color: rgba(0,0,0,0.8);
+	}
+	&_form {
+		background-color: rgba(255,255,255,0.8);
+
+
+		&_btn {
+			display: block;
+			margin: {
+				left: auto;
+				right: auto;
+			};
+			@include mixinDimensions(430px, 80px);
+			line-height: 80px;
+			font: {
+				size: 25px;
+				family: $f-PN_bold;
+			}
+			color: $c-white;
+			background-color: $c-dodger-blue;
+			@include respond-to(small-max) {
+				font-size: 20px;
+			}
+		}
 	}
 
 
@@ -34,32 +63,70 @@ $c-white			      : return-value(color, white);
 		top: 50%;
 		left: 50%;
 
-		width: 720px;
-		height: 420px;
-
-		margin: {
-			top: -(420 / 2) * 1px;
-			left: -(720 / 2) * 1px;
-		}
-		padding: {
-			left: 30px;
-			right: 30px;
-			top: 40px;
-			bottom: 30px;
-		};
-
-		background-color: #171717;
-
 		text-align: center;
 		overflow: hidden;
 
-		@include respond-to(small-max) {
-			width: 95%;
-			height: 95%;
 
+		&_video {
+			width: 720px;
+			height: 420px;
+
+			margin: {
+				top: -(420 / 2) * 1px;
+				left: -(720 / 2) * 1px;
+			}
+			padding: {
+				left: 30px;
+				right: 30px;
+				top: 40px;
+				bottom: 30px;
+			};
+
+			background-color: #171717;
+
+			@include respond-to(small-max) {
+				height: 95%;
+				padding-top: 40px;
+			}
+		}
+		&_form {
+			width: 630px;
+			min-height: 370px;
+
+			margin: {
+				top: -(700 / 2) * 1px;
+				left: -(630 / 2) * 1px;
+			}
+			padding: 30px;
+
+			background-color: #f1f1f1;
+			box-shadow: 0 0 20px 0 rgba(0,0,0,.25);
+
+			@include respond-to(small-max) {
+				height: auto;
+				min-height: 0;
+				padding-top: 15px;
+			}
+		}
+
+
+		&_thank {
+			&:before {
+				content: "";
+				display: inline-block;
+				margin-right: -.32em;
+				vertical-align: middle;
+				min-height: 370px;
+			}
+		}
+
+
+		@include respond-to(small-max) {
 			top: 15px;
 			left: 0;
 			right: 0;
+
+			width: 95%;
 
 			margin: {
 				top: 0;
@@ -68,7 +135,6 @@ $c-white			      : return-value(color, white);
 				bottom: 15px;
 			}
 			padding: {
-				top: 40px;
 				left: 15px;
 				right: 15px;
 				bottom: 15px;
@@ -85,8 +151,95 @@ $c-white			      : return-value(color, white);
 
 		@include retina-sprite($sp-i-close-modal-group);
 	}
+
+
+	&__title {
+		font: {
+			size: 25px;
+			family: $f-PN_bold;
+		}
+		color: $c-dodger-blue;
+		letter-spacing: 3px;
+
+		padding-bottom: 50px;
+		@include respond-to(small-max) {
+			padding-bottom: 30px;
+			font-size: 18px;
+		}
+
+
+		&_thank {
+			padding-bottom: 0;
+		}
+
+
+		&_big {
+			font-size: 35px;
+			@include respond-to(small-max) {
+				font-size: 22px;
+			}
+		}
+	}
+
+
+	&__input {
+		@include mixinDimensions(430px, 80px);
+		background-color: transparent;
+		border: 1px solid $c-neroLight;
+
+		padding: {
+			left: 20px;
+			right: 20px;
+		};
+		margin: {
+			bottom: 50px;
+		};
+		@include respond-to(small-max) {
+			margin: {
+				bottom: 30px;
+			};
+		}
+
+
+		&:focus {
+			border-width: 2px;
+		}
+	}
+
+
+	.modal_form_btn,
+	&__input {
+		@include respond-to(small-max) {
+			width: $w-all;
+		}
+	}
+
+
+	&__row {
+		position: relative;
+		z-index: 10;
+
+
+		&_thank {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+
+	&__img {
+		position: absolute;
+		z-index: 0;
+		bottom: 0;
+		left: 0;
+	}
 }
 
 iframe {
 	@include mixinDimensions($w-all);
 }
+
+input.modal__input::-webkit-input-placeholder {color: $c-neroLight;}
+input.modal__input::-moz-placeholder {color: $c-neroLight;}
+input.modal__input:-moz-placeholder {color: $c-neroLight;}
+input.modal__input::placeholder {color: $c-neroLight;}

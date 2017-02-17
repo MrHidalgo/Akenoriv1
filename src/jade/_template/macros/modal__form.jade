@@ -1,0 +1,28 @@
+
+.modal.modal_form
+    .modal__container.modal__container_form
+
+        img(
+            src="./image/img-modal-form.png"
+            alt=""
+            title=""
+            class="img_responsive modal__img"
+        )
+
+        .modal__row
+
+            p.modal__title!= "ЗАГОЛОВОК КОТОРЫЙ ГОВОРИТ ЧТО ЗАПОЛНИТЕ ПОЖАЛУЙСТА ФОРМУ"
+
+            form(action="" class="modal__form")
+                .modal__input-wrap
+                    input(type="text", class="modal__input", placeholder="Имя")
+                .modal__input-wrap
+                    input(type="text", class="modal__input", placeholder="Телефон")
+                .modal__input-wrap
+                    input(type="text", class="modal__input", placeholder="Почта")
+
+            a(
+                href="javascript:void(0);"
+                title=""
+                class="modal_form_btn"
+            )!= "ОТПРАВИТЬ"

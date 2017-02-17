@@ -5,7 +5,6 @@
 var gulp        =   require('gulp'),
     browserSync =   require('browser-sync').create(),
     reload      =   browserSync.reload,
-    del         =   require('del'),
 	watch       =   require('gulp-watch');
 
 
@@ -37,7 +36,7 @@ gulp.task(command.watch,
     ], function() {
 
     var srcWatchSCSS = ['./src/scss/**.scss', './src/scss/**/**.scss', './src/scss/**/**/**.scss'];
-    var srcWatchJADE = ['./src/jade/**.jade', './src/jade/**/**.jade'];
+    var srcWatchJADE = ['./src/jade/**.jade', './src/jade/**/**.jade', './src/jade/**/**/**.jade'];
     var srcWatchJSON = ['./src/_data/*.json'];
     var srcWatchJS   = ['./src/js/**.js'];
     var srcWatchICON = ['./src/icons/**.png'];
@@ -76,10 +75,4 @@ gulp.task('browser-sync', function() {
 	gulp.task(command.build,
         config.mainConfig.build.arr
 	);
-}
-
-{
-    gulp.task(command.cleanImage, function() {
-        del.sync('./src/image/*');
-    });
 }

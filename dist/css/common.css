@@ -4684,14 +4684,12 @@ input[type="radio"] {
 
 
 .modal {
-  display: none;
   position: fixed;
   z-index: 150;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
 @media screen and (max-width: 767px) {
@@ -4702,11 +4700,48 @@ input[type="radio"] {
 }
 
 
+.modal_video {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.modal_form {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+.modal_form_btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 430px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 25px;
+  font-family: "Proxima Nova Bold";
+  color: #fff;
+  background-color: #0b8aff;
+}
+
+@media screen and (max-width: 767px) {
+  
+  .modal_form_btn {
+    font-size: 20px;
+  }
+}
+
+
 .modal__container {
   position: absolute;
   z-index: 151;
   top: 50%;
   left: 50%;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+.modal__container_video {
   width: 720px;
   height: 420px;
   margin-top: -210px;
@@ -4716,23 +4751,57 @@ input[type="radio"] {
   padding-top: 40px;
   padding-bottom: 30px;
   background-color: #171717;
-  text-align: center;
-  overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  
+  .modal__container_video {
+    height: 95%;
+    padding-top: 40px;
+  }
+}
+
+
+.modal__container_form {
+  width: 630px;
+  min-height: 370px;
+  margin-top: -350px;
+  margin-left: -315px;
+  padding: 30px;
+  background-color: #f1f1f1;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 767px) {
+  
+  .modal__container_form {
+    height: auto;
+    min-height: 0;
+    padding-top: 15px;
+  }
+}
+
+
+.modal__container_thank:before {
+  content: "";
+  display: inline-block;
+  margin-right: -.32em;
+  vertical-align: middle;
+  min-height: 370px;
 }
 
 @media screen and (max-width: 767px) {
   
   .modal__container {
-    width: 95%;
-    height: 95%;
     top: 15px;
     left: 0;
     right: 0;
+    width: 95%;
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
-    padding-top: 40px;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
@@ -4760,7 +4829,120 @@ input[type="radio"] {
 }
 
 
+.modal__title {
+  font-size: 25px;
+  font-family: "Proxima Nova Bold";
+  color: #0b8aff;
+  letter-spacing: 3px;
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  
+  .modal__title {
+    padding-bottom: 30px;
+    font-size: 18px;
+  }
+}
+
+
+.modal__title_thank {
+  padding-bottom: 0;
+}
+
+
+.modal__title_big {
+  font-size: 35px;
+}
+
+@media screen and (max-width: 767px) {
+  
+  .modal__title_big {
+    font-size: 22px;
+  }
+}
+
+
+.modal__input {
+  width: 430px;
+  height: 80px;
+  background-color: transparent;
+  border: 1px solid #272727;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  
+  .modal__input {
+    margin-bottom: 30px;
+  }
+}
+
+
+.modal__input:focus {
+  border-width: 2px;
+}
+
+@media screen and (max-width: 767px) {
+  
+  .modal .modal_form_btn, .modal__input {
+    width: 100%;
+  }
+}
+
+
+.modal__row {
+  position: relative;
+  z-index: 10;
+}
+
+
+.modal__row_thank {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.modal__img {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
 iframe {
   width: 100%;
   height: 100%;
+}
+
+
+input.modal__input::-webkit-input-placeholder {
+  color: #272727;
+}
+
+
+input.modal__input::-moz-placeholder {
+  color: #272727;
+}
+
+
+input.modal__input:-moz-placeholder {
+  color: #272727;
+}
+
+
+input.modal__input::-webkit-input-placeholder {
+  color: #272727;
+}
+input.modal__input::-moz-placeholder {
+  color: #272727;
+}
+input.modal__input:-ms-input-placeholder {
+  color: #272727;
+}
+input.modal__input::placeholder {
+  color: #272727;
 }
