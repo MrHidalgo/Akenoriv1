@@ -15,7 +15,7 @@ $f-PN_bold			: return-value(fonts, PN_bold);
 /// MAIN
 ///
 .modal {
-	//display: none;
+	display: none;
 	position: fixed;
 
 	z-index: 150;
@@ -150,6 +150,44 @@ $f-PN_bold			: return-value(fonts, PN_bold);
 		top: 8px;
 
 		@include retina-sprite($sp-i-close-modal-group);
+
+
+		&-close {
+			position: absolute;
+			top: 5px;
+			right: 5px;
+			@include mixinDimensions(34px, 24px);
+
+
+			&__line {
+				position: absolute;
+				right: 0;
+
+				@include mixinDimensions(34px, 2px);
+
+				background-color: $c-neroLight;
+
+				transition: all .3s ease-in-out;
+
+				width: 32px !important;
+
+
+				&-0,
+				&-2 {
+					transition: all .5s ease-in-out;
+				}
+
+
+				&-0 {
+					top: 11px;
+					transform: rotate(-135deg);
+				}
+				&-2 {
+					bottom: 11px;
+					transform: rotate(135deg);
+				}
+			}
+		}
 	}
 
 

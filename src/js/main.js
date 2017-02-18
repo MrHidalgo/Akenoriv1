@@ -141,55 +141,62 @@ $(document).ready(function() {
     /* MODAL VIDEO */
     $(document).on("keyup", function(e) {
         if (e.keyCode == 27) {
-            $("body").removeClass("open-popup");
+            $("body, html").removeClass("open-popup");
             $(".modal").fadeOut(300);
         }
     });
     $(".btn-close").on("click", function(e) {
         e.preventDefault();
 
-        $("body").removeClass("open-popup");
+        $("body, html").removeClass("open-popup");
         $(".modal").fadeOut(300);
     });
     $('.quality__night-js').on("click", function(e) {
-        $("body").addClass("open-popup");
+        $("body, html").addClass("open-popup");
         $(".modal_night").fadeIn(300);
     });
     $('.quality__day-js').on("click", function(e) {
-        $("body").addClass("open-popup");
+        $("body, html").addClass("open-popup");
         $(".modal_day").fadeIn(300);
     });
 
 
+    /* MODAL WINDOW [FORM] */
+    $(".btn-buy, .btn-buy-mod, .offer__btn, .btn-delivery").on("click", function() {
+        $("body, html").addClass("open-popup");
+        $(".modal__form").fadeIn(300);
+    });
+
+
     /* ANIMATION - VIEW PORT CHECK PAGE */
-    // if($(window).width() > '767') {
-    //     var classNameSection    =   ".main__title, .main__list, .difference__img, " +
-    //         ".innovation__img, .price__row, .quality__row, .quality__text, " +
-    //         ".phone__img, .install__row, .position__wrap, .technical__img, " +
-    //         ".offer__title, .offer__img, .offer__title-sub, .offer__price, " +
-    //         ".offer__row, .device, .information__row-left, .information__row-right, " +
-    //         ".testimonials__row, .delivery__row";
-    //
-    //     $(classNameSection).addClass('hidden').viewportChecker({
-    //             classToAdd: 'visible animated slideInUp',
-    //             classToRemove : 'hidden',
-    //             removeClassAfterAnimation: true
-    //         }
-    //     );
-    //
-    //     $(".header__img-shadow").addClass('hidden').viewportChecker({
-    //             classToAdd: 'visible active',
-    //             classToRemove : 'hidden',
-    //             offset: -100,
-    //             removeClassAfterAnimation: true
-    //         }
-    //     );
-    //     $(".header__img-register").addClass('hidden').viewportChecker({
-    //             classToAdd: 'visible active',
-    //             classToRemove : 'hidden',
-    //             offset: -100,
-    //             removeClassAfterAnimation: true
-    //         }
-    //     );
-    // }
+    if($(window).width() > '767') {
+        var classNameSection    =   ".main__title, .main__list, .difference__img, " +
+            ".innovation__img, .price__row, .quality__row, .quality__text, " +
+            ".phone__img, .install__row, .position__wrap, .technical__img, " +
+            ".offer__title, .offer__img, .offer__title-sub, .offer__price, " +
+            ".offer__row, .device, .information__row-left, .information__row-right, " +
+            ".testimonials__row, .delivery__row";
+
+        $(classNameSection).addClass('hidden').viewportChecker({
+                classToAdd: 'visible animated slideInUp',
+                classToRemove : 'hidden',
+                removeClassAfterAnimation: true
+            }
+        );
+
+        $(".header__img-shadow").addClass('hidden').viewportChecker({
+                classToAdd: 'visible active',
+                classToRemove : 'hidden',
+                offset: -100,
+                removeClassAfterAnimation: true
+            }
+        );
+        $(".header__img-register").addClass('hidden').viewportChecker({
+                classToAdd: 'visible active',
+                classToRemove : 'hidden',
+                offset: -100,
+                removeClassAfterAnimation: true
+            }
+        );
+    }
 });

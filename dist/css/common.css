@@ -4684,6 +4684,7 @@ input[type="radio"] {
 
 
 .modal {
+  display: none;
   position: fixed;
   z-index: 150;
   top: 0;
@@ -4826,6 +4827,49 @@ input[type="radio"] {
     -webkit-background-size: 395px 358px;
             background-size: 395px 358px;
   }
+}
+
+
+.modal__btn-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 34px;
+  height: 24px;
+}
+
+
+.modal__btn-close__line {
+  position: absolute;
+  right: 0;
+  width: 34px;
+  height: 2px;
+  background-color: #272727;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  width: 32px !important;
+}
+
+
+.modal__btn-close__line-0, .modal__btn-close__line-2 {
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+
+.modal__btn-close__line-0 {
+  top: 11px;
+  -webkit-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+
+.modal__btn-close__line-2 {
+  bottom: 11px;
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 
 
